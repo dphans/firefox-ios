@@ -356,18 +356,18 @@ func checkDescriptionSection() {
         // strip out HTML comments so `<!--- ... -->` placeholders don't count
         desc = desc.replacingOccurrences(of: #"<!--.*?-->"#, with: "", options: .regularExpression)
 
-        let count = desc.trimmingCharacters(in: .whitespacesAndNewlines).count
-        if count == 0 {
+        let trimmedDesc = desc.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmedDesc.isEmpty {
             warn("""
             💡 **More details help!**
             Your description section is empty. Adding a bit more context will make reviews smoother. 🙌
             """)
-        } else if count < 10 {
+        } else if trimmedDesc.count < 10 {
             warn("""
             💡 **More details help!**
             Your description section is a bit short (\(count) characters). Adding a bit more context will make reviews smoother. 🙌
             """)
-        } else if count >= 350 {
+        } else if trimmedDesc.count >= 350 {
             markdown("""
             ### 💬 **Description craftsman**
             Great PR description! Reviewers salute you 🫡
