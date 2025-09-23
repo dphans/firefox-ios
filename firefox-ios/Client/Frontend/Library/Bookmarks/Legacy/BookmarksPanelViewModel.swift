@@ -4,7 +4,7 @@
 
 import Foundation
 import Common
-import Storage
+
 import Shared
 
 import class MozillaAppServices.BookmarkFolderData

@@ -89,13 +89,6 @@ class UpdateViewModel: OnboardingViewModelProtocol,
     func setupViewControllerDelegates(with delegate: OnboardingCardDelegate, for window: WindowUUID) {
         availableCards.removeAll()
         for cardModel in cardModels {
-            // If it's a sync sign in card and we're already signed in, don't add
-            // the card to the available cards.
-            if (cardModel.buttons.primary.action == .syncSignIn || cardModel.buttons.secondary?.action == .syncSignIn)
-                && hasSyncableAccount ?? false {
-                break
-            }
-
             if cardModel.cardType == .multipleChoice {
             availableCards.append(OnboardingMultipleChoiceCardViewController(
                 viewModel: cardModel,

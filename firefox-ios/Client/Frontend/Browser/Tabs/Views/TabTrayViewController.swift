@@ -127,8 +127,7 @@ final class TabTrayViewController: UIViewController,
     private lazy var experimentSegmentControl: TabTraySelectorView = {
         let selectedIndex = experimentConvertSelectedIndex()
         let titles = [TabTrayPanelType.privateTabs.label,
-                     TabTrayPanelType.tabs.label,
-                     TabTrayPanelType.syncedTabs.label]
+                     TabTrayPanelType.tabs.label]
         let selector = TabTraySelectorView(selectedIndex: selectedIndex,
                                            theme: retrieveTheme(),
                                            buttonTitles: titles)
@@ -158,14 +157,12 @@ final class TabTrayViewController: UIViewController,
     var segmentControlItems: [Any] {
         let iPhoneItems = [
             TabTrayPanelType.tabs.image!.overlayWith(image: countLabel),
-            TabTrayPanelType.privateTabs.image!,
-            TabTrayPanelType.syncedTabs.image!
+            TabTrayPanelType.privateTabs.image!
         ]
 
         let regularLayoutItems = [
             TabTrayPanelType.tabs.label,
-            TabTrayPanelType.privateTabs.label,
-            TabTrayPanelType.syncedTabs.label,
+            TabTrayPanelType.privateTabs.label
         ]
 
         return isRegularLayout ? regularLayoutItems : iPhoneItems
@@ -648,27 +645,21 @@ final class TabTrayViewController: UIViewController,
             return
         }
 
-        let isSyncTabsPanel = tabTrayState.isSyncTabsPanel
         var toolbarItems: [UIBarButtonItem]
         if tabTrayUtils.shouldDisplayExperimentUI() {
-            toolbarItems = isSyncTabsPanel ? experimentBottomToolbarItemsForSync : experimentBottomToolbarItems
+            toolbarItems = experimentBottomToolbarItems
         } else {
-            toolbarItems = isSyncTabsPanel ? bottomToolbarItemsForSync : bottomToolbarItems
+            toolbarItems = bottomToolbarItems
         }
         setToolbarItems(toolbarItems, animated: true)
     }
 
     private func setupToolbarForIpad() {
-        if tabTrayState.isSyncTabsPanel {
-            navigationItem.leftBarButtonItem = nil
-            navigationItem.rightBarButtonItems = rightBarButtonItemsForSync
-        } else {
-            navigationItem.leftBarButtonItem = deleteButton
-            navigationItem.rightBarButtonItems = [doneButton, fixedSpace, newTabButton]
-        }
+        navigationItem.leftBarButtonItem = deleteButton
+        navigationItem.rightBarButtonItems = [doneButton, fixedSpace, newTabButton]
 
         navigationController?.isToolbarHidden = true
-        let toolbarItems = tabTrayState.isSyncTabsPanel ? bottomToolbarItemsForSync : bottomToolbarItems
+        let toolbarItems = bottomToolbarItems
         setToolbarItems(toolbarItems, animated: true)
     }
 

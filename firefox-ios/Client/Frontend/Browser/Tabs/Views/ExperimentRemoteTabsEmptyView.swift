@@ -80,13 +80,6 @@ class ExperimentRemoteTabsEmptyView: UIView,
         iconImageView.image = UIImage.templateImageNamed(StandardImageIdentifiers.Large.cloud)
         titleLabel.text =  .EmptySyncedTabsPanelStateTitle
         descriptionLabel.text = config.localizedString()
-
-        if config == .notLoggedIn || config == .failedToSync {
-            signInButton.addTarget(self, action: #selector(presentSignIn), for: .touchUpInside)
-        } else if config == .syncDisabledByUser {
-            signInButton.addTarget(self, action: #selector(openAccountSettings), for: .touchUpInside)
-        }
-
         signInButton.isHidden = shouldHideButton(config)
     }
 
@@ -146,19 +139,6 @@ class ExperimentRemoteTabsEmptyView: UIView,
         descriptionLabel.textColor = theme.colors.textPrimary
         signInButton.applyTheme(theme: theme)
         backgroundColor = theme.colors.layer3
-    }
-
-    @objc
-    private func presentSignIn() {
-        if let delegate = self.delegate {
-            TelemetryWrapper.recordEvent(category: .action, method: .tap, object: .syncSignIn)
-            delegate.remotePanelDidRequestToSignIn()
-        }
-    }
-
-    @objc
-    private func openAccountSettings() {
-        delegate?.presentFxAccountSettings()
     }
 
     // MARK: - InsetUpdatable

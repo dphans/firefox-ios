@@ -4,7 +4,7 @@
 
 import Common
 import Shared
-import Storage
+
 
 import class MozillaAppServices.PushManager
 import protocol MozillaAppServices.PushManagerProtocol

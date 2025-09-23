@@ -4,7 +4,7 @@
 
 import Common
 import Redux
-import Storage
+
 
 final class BookmarksMiddleware {
     private let bookmarksHandler: BookmarksHandler

@@ -307,21 +307,6 @@ extension IntroViewController: OnboardingCardDelegate {
             advance(numberOfPages: 3, from: cardName) {
                 self.showNextPageCompletionForLastCard()
             }
-        case .syncSignIn:
-            introViewModel.chosenOptions.insert(.syncSignIn)
-            introViewModel.updateOnboardingUserActivationEvent()
-            let fxaPrams = FxALaunchParams(entrypoint: .introOnboarding, query: [:])
-            presentSignToSync(
-                windowUUID: windowUUID,
-                with: fxaPrams,
-                selector: #selector(dismissSignInViewController),
-                completion: {
-                    self.advance(numberOfPages: 1, from: cardName) {
-                        self.showNextPageCompletionForLastCard()
-                    }
-                },
-                qrCodeNavigationHandler: qrCodeNavigationHandler
-            )
         case .setDefaultBrowser:
             introViewModel.chosenOptions.insert(.setAsDefaultBrowser)
             introViewModel.updateOnboardingUserActivationEvent()

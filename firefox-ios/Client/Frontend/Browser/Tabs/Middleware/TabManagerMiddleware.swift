@@ -5,7 +5,7 @@
 import Common
 import Redux
 import Shared
-import Storage
+
 import Account
 import SiteImageView
 import SummarizeKit
@@ -847,12 +847,10 @@ final class TabManagerMiddleware: FeatureFlaggable {
         tabsPanelTelemetry.tabModeSelected(mode: panel.modeForTelemetry)
         let isPrivate = panel == TabTrayPanelType.privateTabs
         let tabState = self.getTabsDisplayModel(for: isPrivate, uuid: uuid)
-        if panel != .syncedTabs {
-            let action = TabPanelMiddlewareAction(tabDisplayModel: tabState,
-                                                  windowUUID: uuid,
-                                                  actionType: TabPanelMiddlewareActionType.didChangeTabPanel)
-            store.dispatchLegacy(action)
-        }
+        let action = TabPanelMiddlewareAction(tabDisplayModel: tabState,
+                                              windowUUID: uuid,
+                                              actionType: TabPanelMiddlewareActionType.didChangeTabPanel)
+        store.dispatchLegacy(action)
     }
 
     // MARK: - Main menu actions
@@ -1075,28 +1073,6 @@ final class TabManagerMiddleware: FeatureFlaggable {
     }
 
     private func getAccountData() -> AccountData {
-        let rustAccount = RustFirefoxAccounts.shared
-        let needsReAuth = rustAccount.accountNeedsReauth()
-
-        if let userProfile = rustAccount.userProfile {
-            let title: String = {
-                return userProfile.displayName ?? userProfile.email
-            }()
-
-            let subtitle: String? = needsReAuth ?
-                .MainMenu.Account.SyncErrorDescription : .MainMenu.Account.SignedInDescription
-
-            var iconURL: URL?
-            if let str = rustAccount.userProfile?.avatarUrl,
-               let url = URL(string: str) {
-                iconURL = url
-            }
-
-            return AccountData(title: title,
-                               subtitle: subtitle,
-                               needsReAuth: needsReAuth,
-                               iconURL: iconURL)
-        }
         return defaultAccountData()
     }
 

@@ -123,15 +123,6 @@ final class AppLaunchUtil: Sendable {
             .rustFxaKeychainEnabled
         profile.prefs.setBool(rustFxaKeychainEnabled, forKey: PrefsKeys.RustFxaKeychainEnabled)
 
-        RustFirefoxAccounts.startup(prefs: profile.prefs) { manager in
-            self.logger.log("RustFirefoxAccounts started", level: .info, category: .sync)
-            AppEventQueue.signal(event: .accountManagerInitialized)
-
-            if let accountUid = manager.accountProfile()?.uid {
-                UserTelemetry().setFirefoxAccountID(uid: accountUid)
-            }
-        }
-
         // Add swizzle on UIViewControllers to automatically log when there's a new view appearing or disappearing
         UIViewController.loggerSwizzle()
 

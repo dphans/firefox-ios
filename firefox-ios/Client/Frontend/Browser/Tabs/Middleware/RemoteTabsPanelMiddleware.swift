@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import UIKit
-import Storage
+
 import Common
 import Shared
 import Redux
@@ -107,19 +107,10 @@ class RemoteTabsPanelMiddleware {
             }
             var action: RemoteTabsPanelAction
 
-            if let constellation = self.profile.rustFxA.accountManager?.deviceConstellation() {
-                constellation.refreshState()
-
-                action = RemoteTabsPanelAction(clientAndTabs: clientAndTabs,
-                                               devices: constellation.state()?.remoteDevices,
-                                               windowUUID: window,
-                                               actionType: RemoteTabsPanelActionType.refreshDidSucceed)
-            } else {
-                action = RemoteTabsPanelAction(clientAndTabs: clientAndTabs,
-                                               devices: nil,
-                                               windowUUID: window,
-                                               actionType: RemoteTabsPanelActionType.refreshDidSucceed)
-            }
+            action = RemoteTabsPanelAction(clientAndTabs: clientAndTabs,
+                                           devices: nil,
+                                           windowUUID: window,
+                                           actionType: RemoteTabsPanelActionType.refreshDidSucceed)
             store.dispatchLegacy(action)
         }
 

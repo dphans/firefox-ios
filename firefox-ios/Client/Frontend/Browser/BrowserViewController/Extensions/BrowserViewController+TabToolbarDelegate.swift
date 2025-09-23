@@ -474,12 +474,6 @@ extension BrowserViewController: ToolBarActionMenuDelegate, UIDocumentPickerDele
         updateZoomPageBarVisibility(visible: true)
     }
 
-    func showSignInView(fxaParameters: FxASignInViewParameters) {
-        presentSignInViewController(fxaParameters.launchParameters,
-                                    flowType: fxaParameters.flowType,
-                                    referringPage: fxaParameters.referringPage)
-    }
-
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         if !urls.isEmpty {
             showToast(message: .LegacyAppMenu.AppMenuDownloadPDFConfirmMessage, toastAction: .downloadPDF)

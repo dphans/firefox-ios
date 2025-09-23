@@ -4,7 +4,7 @@
 
 import Foundation
 import Shared
-import Storage
+
 
 protocol TopSiteHistoryManagerProvider {
     func getTopSites(completion: @escaping ([Site]?) -> Void)

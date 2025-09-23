@@ -4,7 +4,7 @@
 
 import Foundation
 import Shared
-import Storage
+
 import WebKit
 
 class MetadataParserHelper: TabEventHandler {

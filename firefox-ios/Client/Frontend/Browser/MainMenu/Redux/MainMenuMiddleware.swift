@@ -20,7 +20,6 @@ final class MainMenuMiddleware: FeatureFlaggable {
         static let saveAsPDF = "save_as_PDF"
         static let switchToDesktopSite = "switch_to_desktop_site"
         static let switchToMobileSite = "switch_to_mobile_site"
-        static let signInAccount = "sign_in_account"
         static let zoom = "zoom"
         static let bookmarkThisPage = "bookmark_this_page"
         static let editBookmark = "edit_bookmark"
@@ -172,29 +171,7 @@ final class MainMenuMiddleware: FeatureFlaggable {
     }
 
     private func getAccountData() -> AccountData? {
-        let rustAccount = RustFirefoxAccounts.shared
-        let needsReAuth = rustAccount.accountNeedsReauth()
-
-        guard let userProfile = rustAccount.userProfile else { return nil }
-
-        let title: String = {
-            if needsReAuth { return .MainMenu.Account.SyncErrorTitle }
-            return userProfile.displayName ?? userProfile.email
-        }()
-
-        let subtitle: String? = needsReAuth ? .MainMenu.Account.SyncErrorDescription : nil
-        let warningIcon: String? = needsReAuth ? StandardImageIdentifiers.Large.warningFill : nil
-
-        var iconURL: URL?
-        if let str = rustAccount.userProfile?.avatarUrl,
-           let url = URL(string: str) {
-            iconURL = url
-        }
-
-        return AccountData(title: title,
-                           subtitle: subtitle,
-                           warningIcon: warningIcon,
-                           iconURL: iconURL)
+        return nil
     }
 
     private func handleTelemetryFor(for navigationDestination: MainMenuNavigationDestination,
@@ -227,9 +204,6 @@ final class MainMenuMiddleware: FeatureFlaggable {
 
         case .saveAsPDFV2:
             telemetry.mainMenuOptionTapped(with: isHomepage, and: TelemetryAction.saveAsPDF)
-
-        case .syncSignIn:
-            telemetry.mainMenuOptionTapped(with: isHomepage, and: TelemetryAction.signInAccount)
 
         case .editBookmark:
             self.telemetry.mainMenuOptionTapped(with: isHomepage, and: TelemetryAction.editBookmark)

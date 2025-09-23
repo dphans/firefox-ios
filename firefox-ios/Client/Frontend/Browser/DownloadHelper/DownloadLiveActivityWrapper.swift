@@ -21,8 +21,6 @@ class DownloadLiveActivityWrapper: DownloadProgressDelegate {
 
     let throttler = ConcurrencyThrottler(seconds: UX.updateCooldown)
 
-    var downloadLiveActivity: Activity<DownloadLiveActivityAttributes>?
-
     var downloadProgressManager: DownloadProgressManager
 
     let windowUUID: String
@@ -33,37 +31,17 @@ class DownloadLiveActivityWrapper: DownloadProgressDelegate {
     }
 
     func start() -> Bool {
-        let attributes = DownloadLiveActivityAttributes(windowUUID: windowUUID)
-
-        let downloadsStates = DownloadLiveActivityUtil.buildContentState(downloads: downloadProgressManager.downloads)
-        let contentState = DownloadLiveActivityAttributes.ContentState(downloads: downloadsStates)
-
-        do {
-            downloadLiveActivity = try Activity<DownloadLiveActivityAttributes>.request(
-                attributes: attributes,
-                content: .init(state: contentState, staleDate: nil),
-                pushType: nil
-            )
-            return true
-        } catch {
-            return false
-        }
+        return false
     }
 
     func end(durationToDismissal: DurationToDismissal) {
         Task {
-            let downloadsStates = DownloadLiveActivityUtil.buildContentState(downloads: downloadProgressManager.downloads)
-            let contentState = DownloadLiveActivityAttributes.ContentState(downloads: downloadsStates)
             await update()
-            try await Task.sleep(nanoseconds: durationToDismissal.rawValue)
-            await downloadLiveActivity?.end(using: contentState, dismissalPolicy: .immediate)
         }
     }
 
     private func update() async {
-        let downloadsStates = DownloadLiveActivityUtil.buildContentState(downloads: downloadProgressManager.downloads)
-        let contentState = DownloadLiveActivityAttributes.ContentState(downloads: downloadsStates)
-        await self.downloadLiveActivity?.update(using: contentState)
+        
     }
 
     func updateCombinedBytesDownloaded(value: Int64) {

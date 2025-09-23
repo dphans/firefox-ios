@@ -167,28 +167,6 @@ struct MainMenuConfigurationUtility: Equatable, FeatureFlaggable {
             isHomepage: tabInfo.isHomepage,
             options: [
                 MenuElement(
-                    title: tabInfo.accountData.title,
-                    description: tabInfo.accountData.subtitle,
-                    iconName: Icons.avatarCircle,
-                    iconImage: profileImage,
-                    needsReAuth: tabInfo.accountData.needsReAuth,
-                    isEnabled: true,
-                    isActive: false,
-                    a11yLabel: "\(tabInfo.accountData.title) \(tabInfo.accountData.subtitle ?? "")",
-                    a11yHint: "",
-                    a11yId: AccessibilityIdentifiers.MainMenu.signIn,
-                    action: {
-                        store.dispatchLegacy(
-                            MainMenuAction(
-                                windowUUID: uuid,
-                                actionType: MainMenuActionType.tapNavigateToDestination,
-                                navigationDestination: MenuNavigationDestination(.syncSignIn),
-                                currentTabInfo: tabInfo
-                            )
-                        )
-                    }
-                ),
-                MenuElement(
                     title: .MainMenu.OtherToolsSection.Settings,
                     iconName: Icons.settings,
                     isEnabled: true,

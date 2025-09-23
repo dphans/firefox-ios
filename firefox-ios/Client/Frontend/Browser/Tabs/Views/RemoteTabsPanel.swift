@@ -8,14 +8,6 @@ import Redux
 
 import enum MozillaAppServices.VisitType
 
-protocol RemoteTabsPanelDelegate: AnyObject {
-    @MainActor
-    func presentFirefoxAccountSignIn()
-
-    @MainActor
-    func presentFxAccountSettings()
-}
-
 protocol RemoteTabsClientAndTabsDataSourceDelegate: AnyObject {
     @MainActor
     func remoteTabsClientAndTabsDataSourceDidSelectURL(_ url: URL, visitType: VisitType)
@@ -34,7 +26,6 @@ class RemoteTabsPanel: UIViewController,
 
     private(set) var state: RemoteTabsPanelState
     var tabsDisplayViewController: RemoteTabsViewController
-    weak var remoteTabsDelegate: RemoteTabsPanelDelegate?
 
     var themeManager: ThemeManager
     var themeListenerCancellable: Any?
@@ -219,15 +210,6 @@ class RemoteTabsPanel: UIViewController,
 
     func remoteTabsClientAndTabsDataSourceDidTabCommandsFlush(deviceId: String) {
         handleTabCommandsFlush(deviceId)
-    }
-
-    // MARK: - RemotePanelDelegate
-    func remotePanelDidRequestToSignIn() {
-        remoteTabsDelegate?.presentFirefoxAccountSignIn()
-    }
-
-    func presentFxAccountSettings() {
-        remoteTabsDelegate?.presentFxAccountSettings()
     }
 
     func remotePanelDidRequestToOpenInNewTab(_ url: URL, isPrivate: Bool) {

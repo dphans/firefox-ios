@@ -4,7 +4,7 @@
 
 import Common
 import Glean
-import Storage
+
 
 struct FxSuggestTelemetry {
     enum EventInfo: String {

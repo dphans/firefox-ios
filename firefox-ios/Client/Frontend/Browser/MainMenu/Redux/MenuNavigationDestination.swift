@@ -15,7 +15,6 @@ enum MainMenuNavigationDestination: Equatable {
     case passwords
     case settings
     case siteProtections
-    case syncSignIn
     case printSheetV2
     case shareSheet
     case saveAsPDFV2
@@ -38,7 +37,6 @@ enum MainMenuNavigationDestination: Equatable {
             .passwords,
             .settings,
             .siteProtections,
-            .syncSignIn,
             .printSheetV2,
             .shareSheet,
             .saveAsPDFV2,

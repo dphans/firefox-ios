@@ -6,7 +6,7 @@ import Common
 import Foundation
 import WebKit
 import Shared
-import Storage
+
 import Redux
 import PDFKit
 import SummarizeKit
@@ -356,7 +356,7 @@ class BrowserCoordinator: BaseCoordinator,
         }
 
         switch route {
-        case .searchQuery, .search, .searchURL, .glean, .homepanel, .action, .fxaSignIn, .defaultBrowser, .sharesheet:
+        case .searchQuery, .search, .searchURL, .glean, .homepanel, .action, .defaultBrowser, .sharesheet:
             return true
         case let .settings(section):
             return canHandleSettings(with: section)
@@ -405,9 +405,6 @@ class BrowserCoordinator: BaseCoordinator,
             case .showIntroOnboarding:
                 showIntroOnboarding()
             }
-
-        case let .fxaSignIn(params):
-            handle(fxaParams: params)
 
         case let .defaultBrowser(section):
             switch section {
@@ -467,10 +464,6 @@ class BrowserCoordinator: BaseCoordinator,
 
     private func handle(searchURL: URL?, tabId: String) {
         browserViewController.handle(url: searchURL, tabId: tabId)
-    }
-
-    private func handle(fxaParams: FxALaunchParams) {
-        browserViewController.presentSignInViewController(fxaParams)
     }
 
     /// Starts the share sheet coordinator for the deep link `.sharesheet` route (share content via Nimbus Messaging).
@@ -752,13 +745,6 @@ class BrowserCoordinator: BaseCoordinator,
         coordinator.start()
 
         return navigationController
-    }
-
-    func showSignInView(fxaParameters: FxASignInViewParameters?) {
-        guard let fxaParameters else { return }
-        browserViewController.presentSignInViewController(fxaParameters.launchParameters,
-                                                          flowType: fxaParameters.flowType,
-                                                          referringPage: fxaParameters.referringPage)
     }
 
     // MARK: - SearchEngineSelectionCoordinatorDelegate
@@ -1047,7 +1033,7 @@ class BrowserCoordinator: BaseCoordinator,
 
         // FXIOS-13305: We don't handle animations properly for synced tabs, so we will use default presentation
         if featureFlags.isFeatureEnabled(.tabTrayUIExperiments, checking: .buildOnly) &&
-            UIDevice.current.userInterfaceIdiom != .pad && selectedPanel != .syncedTabs {
+            UIDevice.current.userInterfaceIdiom != .pad {
             guard let tabTrayVC = tabTrayCoordinator.tabTrayViewController else { return }
             present(navigationController, customTransition: tabTrayVC, style: modalPresentationStyle)
         } else {
@@ -1286,15 +1272,6 @@ class BrowserCoordinator: BaseCoordinator,
             guard uuid != windowUUID else { return }
             performIfCoordinatorRootVCIsPresented(SettingsCoordinator.self) {
                 didFinishSettings(from: $0)
-            }
-        case .syncMenuOpened:
-            guard uuid != windowUUID else { return }
-            let browserPresentedVC = router.navigationController.presentedViewController
-            if let navVCs = (browserPresentedVC as? UINavigationController)?.viewControllers,
-               navVCs.contains(where: {
-                   $0 is FirefoxAccountSignInViewController || $0 is SyncContentSettingsViewController
-               }) {
-                router.dismiss(animated: true, completion: nil)
             }
         case .qrScannerOpened:
             guard uuid != windowUUID else { return }

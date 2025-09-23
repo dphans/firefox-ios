@@ -4,7 +4,7 @@
 
 import Foundation
 import TabDataStore
-import Storage
+
 import Common
 import Shared
 import WebKit
@@ -1286,16 +1286,5 @@ extension TabManagerImplementation: Notifiable {
                 break
             }
         }
-    }
-}
-
-// MARK: - WindowSimpleTabsProvider
-extension TabManagerImplementation: WindowSimpleTabsProvider {
-    func windowSimpleTabs() -> [TabUUID: SimpleTab] {
-        // FIXME possibly also related FXIOS-10059 TabManagerImplementation's preserveTabs is called with a nil selectedTab
-        let windowData = WindowData(id: windowUUID,
-                                    activeTabId: self.selectedTabUUID ?? UUID(),
-                                    tabData: self.generateTabDataForSaving())
-        return SimpleTab.convertToSimpleTabs(windowData.tabData)
     }
 }

@@ -53,12 +53,6 @@ enum Route: Equatable {
     /// - Parameter action: An instance of `AppAction` indicating the application action to be performed.
     case action(action: AppAction)
 
-    /// Represents a Firefox account sign-in route that takes an `FxALaunchParams` object indicating
-    /// the parameters for the sign-in.
-    ///
-    /// - Parameter params: An instance of `FxALaunchParams` containing the parameters for the sign-in.
-    case fxaSignIn(params: FxALaunchParams)
-
     /// Represents a default browser route that takes a `DefaultBrowserSection` value indicating
     /// the section to be displayed.
     ///
@@ -102,7 +96,6 @@ enum Route: Equatable {
         case clearPrivateData = "clear-private-data"
         case creditCard
         case password
-        case fxa
         case general
         case homePage = "homepage"
         case mailto

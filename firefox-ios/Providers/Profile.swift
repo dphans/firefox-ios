@@ -11,7 +11,7 @@
 import Common
 import Account
 import Shared
-import Storage
+
 import AuthenticationServices
 
 import class MozillaAppServices.RemoteSettingsService
@@ -123,8 +123,6 @@ protocol Profile: AnyObject, Sendable {
 
     // Do we have an account that (as far as we know) is in a syncable state?
     func hasSyncableAccount() -> Bool
-
-    var rustFxA: RustFirefoxAccounts { get }
 
     func removeAccount()
 
@@ -309,7 +307,7 @@ open class BrowserProfile: Profile,
 
         // Initiating the sync manager has to happen prior to the databases being opened,
         // because opening them can trigger events to which the SyncManager listens.
-        self.syncManager = RustSyncManager(profile: self)
+        // self.syncManager = RustSyncManager(profile: self)
 
         // Remove the default homepage. This does not change the user's preference,
         // just the behaviour when there is no homepage.
@@ -453,19 +451,7 @@ open class BrowserProfile: Profile,
     func retrieveTabData() -> Deferred<Maybe<[ClientAndTabs]>> {
         logger.log("Getting all tabs and clients", level: .debug, category: .tabs)
 
-        guard let accountManager = self.rustFxA.accountManager,
-              let state = accountManager.deviceConstellation()?.state()
-        else {
-            return deferMaybe([])
-        }
-
-        let remoteDeviceIds: [String] = state.remoteDevices.compactMap {
-            guard $0.capabilities.contains(.sendTab) else { return nil }
-            return $0.id
-        }
-
-        let clientAndTabs = tabs.getRemoteClients(remoteDeviceIds: remoteDeviceIds)
-        return clientAndTabs
+        return deferMaybe([])
     }
 
     public func getClientsAndTabs() -> Deferred<Maybe<[ClientAndTabs]>> {
@@ -549,50 +535,11 @@ open class BrowserProfile: Profile,
 
     public func sendItem(_ item: ShareItem, toDevices devices: [RemoteDevice]) -> Success {
         let deferred = Success()
-        if let accountManager = RustFirefoxAccounts.shared.accountManager {
-            guard let constellation = accountManager.deviceConstellation() else {
-                deferred.fill(Maybe(failure: NoAccountError()))
-                return deferred
-            }
-            devices.forEach {
-                if let id = $0.id {
-                    constellation.sendEventToDevice(
-                        targetDeviceId: id,
-                        e: .sendTab(title: item.title ?? "", url: item.url)
-                    )
-                }
-            }
-            self.sendQueuedSyncEvents()
-            deferred.fill(Maybe(success: ()))
-        }
         return deferred
     }
 
     public func flushTabCommands(toDeviceId: String?) {
-        guard let deviceId = toDeviceId,
-            let constellation = RustFirefoxAccounts.shared.accountManager?.deviceConstellation() else {
-            return
-        }
-
-        // send all unsent close tab commands
-        self.tabs.getUnsentCommandUrlsByDeviceId(deviceId: deviceId) { urls in
-            constellation.sendEventToDevice(targetDeviceId: deviceId,
-                                            e: .closeTabs(urls: urls)) { result in
-                switch result {
-                case .success:
-                    // mark all pending tab commands as sent
-                    self.tabs.setPendingCommandsSent(deviceId: deviceId)
-                case .failure(.tabsNotClosed(let urls)):
-                    // mark pending tab commands as sent excluding unsentUrls
-                    self.tabs.setPendingCommandsSent(deviceId: deviceId, unsentCommandUrls: urls)
-                default:
-                    // technically this should not be possible here as a non-tabsNotClosed error would
-                    // result after a sendTab sendEventToDevice call but we are covering this case to
-                    // make the compiler happy
-                    break
-                }
-            }
-        }
+        
     }
 
     public func setCommandArrived() {
@@ -615,34 +562,7 @@ open class BrowserProfile: Profile,
             return
         }
         self.prefs.setTimestamp(now, forKey: PrefsKeys.PollCommandsTimestamp)
-        if let accountManager = self.rustFxA.accountManager {
-            accountManager.deviceConstellation()?.pollForCommands { commands in
-                guard let commands = try? commands.get() else { return }
-
-                var receivedTabURLs: [URL] = []
-                var closedTabURLs: [URL] = []
-                for command in commands {
-                    switch command {
-                    case .tabReceived(_, let tabData):
-                        if let urlString = tabData.entries.last?.url, let url = URL(string: urlString) {
-                            receivedTabURLs.append(url)
-                        }
-                    case .tabsClosed(sender: _, let closeTabPayload):
-                        closedTabURLs.append(contentsOf: closeTabPayload.urls.compactMap { URL(string: $0) })
-                    }
-                }
-                if !receivedTabURLs.isEmpty {
-                    // TODO: FXIOS-12854 pollForCommands completionHandler should be marked as @MainActor
-                    Task { @MainActor in
-                        self.fxaCommandsDelegate?.openSendTabs(for: receivedTabURLs)
-                    }
-                }
-
-                if !closedTabURLs.isEmpty {
-                    self.fxaCommandsDelegate?.closeTabs(for: closedTabURLs)
-                }
-            }
-        }
+        
     }
 
     lazy var logins: RustLogins = {
@@ -731,21 +651,15 @@ open class BrowserProfile: Profile,
     }
 
     func hasAccount() -> Bool {
-        return rustFxA.hasAccount()
+        return false
     }
 
     func hasSyncableAccount() -> Bool {
-        return hasAccount() && !rustFxA.accountNeedsReauth()
-    }
-
-    var rustFxA: RustFirefoxAccounts {
-        return RustFirefoxAccounts.shared
+        return hasAccount()
     }
 
     func removeAccount() {
         logger.log("Removing sync account", level: .debug, category: .sync)
-
-        RustFirefoxAccounts.shared.disconnect()
 
         // Not available in extensions
         #if !MOZ_TARGET_NOTIFICATIONSERVICE && !MOZ_TARGET_SHARETO && !MOZ_TARGET_CREDENTIAL_PROVIDER
@@ -790,23 +704,7 @@ open class BrowserProfile: Profile,
         message: "UIApplication.shared is unavailable in application extensions"
     )
     private func unregisterRemoteNotifications() {
-        Task {
-            do {
-                let autopush = try await Autopush(files: files)
-                // unsubscribe returns a boolean telling the caller if the subscription was already
-                // unsubscribed, we ignore it because regardless the subscription is gone.
-                _ = try await autopush.unsubscribe(scope: RustFirefoxAccounts.pushScope)
-            } catch let error {
-                logger.log("Unable to unsubscribe account push subscription",
-                           level: .warning,
-                           category: .sync,
-                           description: error.localizedDescription
-                )
-            }
-        }
-        if let application = UIApplication.value(forKeyPath: #keyPath(UIApplication.shared)) as? UIApplication {
-            application.unregisterForRemoteNotifications()
-        }
+        
     }
 
     class NoAccountError: MaybeErrorType {

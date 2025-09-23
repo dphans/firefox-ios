@@ -9,7 +9,6 @@ enum DeeplinkInput {
     /// An enumeration of possible hosts for deep links.
     enum Host: String {
         case deepLink = "deep-link"
-        case fxaSignIn = "fxa-signin"
         case openUrl = "open-url"
         case openText = "open-text"
         case sharesheet = "share-sheet"
@@ -21,15 +20,9 @@ enum DeeplinkInput {
         case widgetMediumQuickLinkOpenCopied = "widget-medium-quicklink-open-copied"
         case widgetSmallQuickLinkClosePrivateTabs = "widget-small-quicklink-close-private-tabs"
         case widgetMediumQuickLinkClosePrivateTabs = "widget-medium-quicklink-close-private-tabs"
-        case widgetTabsMediumOpenUrl = "widget-tabs-medium-open-url"
-        case widgetTabsLargeOpenUrl = "widget-tabs-large-open-url"
 
         var shouldRouteDeeplinkToSpecificIPadWindow: Bool {
             switch self {
-            case .widgetTabsMediumOpenUrl, .widgetTabsLargeOpenUrl:
-                // Some of our widget URLs contain tab UUIDs which will be contained within a specific iPad
-                // window. Make sure that when opening these we route them to the correct UIScene.
-                return true
             default:
                 return false
             }
@@ -48,12 +41,11 @@ enum DeeplinkInput {
             switch self {
             case .openText,
                     .openUrl, .sharesheet,
-                    .widgetTabsLargeOpenUrl, .widgetTabsMediumOpenUrl,
                     .widgetMediumTopSitesOpenUrl,
                     .widgetSmallQuickLinkOpenUrl, .widgetMediumQuickLinkOpenUrl,
                     .widgetSmallQuickLinkOpenCopied, .widgetMediumQuickLinkOpenCopied:
                 return urlQuery?.isWebPage() ?? true
-            case .deepLink, .fxaSignIn, .glean,
+            case .deepLink, .glean,
                     .widgetSmallQuickLinkClosePrivateTabs, .widgetMediumQuickLinkClosePrivateTabs:
                 return true
             }

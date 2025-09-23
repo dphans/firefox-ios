@@ -20,9 +20,6 @@ enum WindowEvent {
     /// A window opened the settings menu.
     case settingsOpened
 
-    /// Sync & sign-in, or sync settings, presented.
-    case syncMenuOpened
-
     /// QR code scanner is opened
     case qrScannerOpened
 }

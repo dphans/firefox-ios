@@ -6,7 +6,7 @@ import Foundation
 import Shared
 import WebKit
 import Common
-import Storage
+
 
 enum AutofillFieldValueType: String {
     case address

@@ -4,7 +4,7 @@
 
 import Shared
 import UIKit
-import Storage
+
 import SiteImageView
 
 public protocol GoogleTopSiteManagerProvider: Sendable {

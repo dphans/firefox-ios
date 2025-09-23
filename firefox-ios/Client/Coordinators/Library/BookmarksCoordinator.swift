@@ -19,8 +19,6 @@ protocol BookmarksCoordinatorDelegate: AnyObject, LibraryPanelCoordinatorDelegat
         parentFolderSelector: ParentFolderSelector?
     )
 
-    func showSignIn()
-
     /// Calls the parent coordinator dismiss and remove the bookmarks coordinator
     func didFinish()
 }
@@ -48,7 +46,6 @@ class BookmarksCoordinator: BaseCoordinator,
     private let profile: Profile
     private weak var libraryCoordinator: LibraryCoordinatorDelegate?
     private weak var libraryNavigationHandler: LibraryNavigationHandler?
-    private var fxAccountViewController: FirefoxAccountSignInViewController?
     private let windowUUID: WindowUUID
 
     // MARK: - Initializers
@@ -104,11 +101,6 @@ class BookmarksCoordinator: BaseCoordinator,
                                                     parentFolder: parentBookmarkFolder,
                                                     parentFolderSelector: parentFolderSelector)
         router.push(detailController)
-    }
-
-    func showSignIn() {
-        let controller = makeSignInController()
-        router.present(controller)
     }
 
     func didFinish() {
@@ -216,25 +208,6 @@ class BookmarksCoordinator: BaseCoordinator,
         return controller
     }
 
-    private func makeSignInController() -> UIViewController {
-        let fxaParams = FxALaunchParams(entrypoint: .libraryPanel, query: [:])
-        let viewController = FirefoxAccountSignInViewController(profile: profile,
-                                                                parentType: .library,
-                                                                deepLinkParams: fxaParams,
-                                                                windowUUID: windowUUID)
-        viewController.qrCodeNavigationHandler = self
-        let buttonItem = UIBarButtonItem(
-            title: .CloseButtonTitle,
-            style: .plain,
-            target: self,
-            action: #selector(dismissFxAViewController)
-        )
-        viewController.navigationItem.leftBarButtonItem = buttonItem
-        let navController = ThemedNavigationController(rootViewController: viewController, windowUUID: windowUUID)
-        fxAccountViewController = viewController
-        return navController
-    }
-
     private func reloadLastBookmarksController() {
         guard let rootBookmarkController = router.navigationController.viewControllers.last
                 as? BookmarksViewController
@@ -248,11 +221,5 @@ class BookmarksCoordinator: BaseCoordinator,
     private func setBackBarButtonItemTitle(_ title: String) {
         let backBarButton = UIBarButtonItem(title: title)
         router.navigationController.viewControllers.last?.navigationItem.backBarButtonItem = backBarButton
-    }
-
-    @objc
-    private func dismissFxAViewController() {
-        fxAccountViewController?.dismissVC()
-        fxAccountViewController = nil
     }
 }

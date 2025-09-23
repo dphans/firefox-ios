@@ -793,9 +793,6 @@ class AccountSetting: Setting {
 
     override func onConfigureCell(_ cell: UITableViewCell, theme: Theme) {
         super.onConfigureCell(cell, theme: theme)
-        if settings.profile?.rustFxA.userProfile != nil {
-            cell.selectionStyle = .none
-        }
     }
 
     override var accessoryType: UITableViewCell.AccessoryType { return .none }
@@ -974,15 +971,7 @@ class SettingsTableViewController: ThemedTableViewController {
     }
 
     private func dequeueCellFor(indexPath: IndexPath, setting: Setting) -> ThemedTableViewCell {
-        if setting as? DisconnectSetting != nil {
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: ThemedCenteredTableViewCell.cellIdentifier,
-                for: indexPath
-            ) as? ThemedCenteredTableViewCell else {
-                return ThemedCenteredTableViewCell()
-            }
-            return cell
-        } else if setting as? SendDataSetting != nil {
+        if setting as? SendDataSetting != nil {
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: ThemedLearnMoreTableViewCell.cellIdentifier,
                 for: indexPath

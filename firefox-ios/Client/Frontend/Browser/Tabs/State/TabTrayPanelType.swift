@@ -8,7 +8,6 @@ import Common
 enum TabTrayPanelType: Int, CaseIterable {
     case tabs
     case privateTabs
-    case syncedTabs
 
     var navTitle: String {
         switch self {
@@ -16,8 +15,6 @@ enum TabTrayPanelType: Int, CaseIterable {
             return .TabsTray.TabTrayV2Title
         case .privateTabs:
             return .TabsTray.TabTrayPrivateBrowsingTitle
-        case .syncedTabs:
-            return .LegacyAppMenu.AppMenuSyncedTabsTitleString
         }
     }
 
@@ -27,8 +24,6 @@ enum TabTrayPanelType: Int, CaseIterable {
             return .TabsTray.TabsSelectorNormalTabsTitle
         case .privateTabs:
             return .TabsTray.TabsSelectorPrivateTabsTitle
-        case .syncedTabs:
-            return .TabsTray.TabsSelectorSyncedTabsTitle
         }
     }
 
@@ -38,8 +33,6 @@ enum TabTrayPanelType: Int, CaseIterable {
             return UIImage(named: StandardImageIdentifiers.Large.tab)
         case .privateTabs:
             return UIImage(named: StandardImageIdentifiers.Large.privateMode)
-        case .syncedTabs:
-            return UIImage(named: StandardImageIdentifiers.Large.syncTabs)
         }
     }
 
@@ -49,8 +42,6 @@ enum TabTrayPanelType: Int, CaseIterable {
             return .normal
         case .privateTabs:
             return .private
-        case .syncedTabs:
-            return .sync
         }
     }
 
@@ -59,7 +50,6 @@ enum TabTrayPanelType: Int, CaseIterable {
         switch index {
         case 0: panelType = .privateTabs
         case 1: panelType = .tabs
-        case 2: panelType = .syncedTabs
         default: break
         }
         return panelType

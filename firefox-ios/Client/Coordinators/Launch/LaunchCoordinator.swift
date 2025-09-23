@@ -104,7 +104,7 @@ final class LaunchCoordinator: BaseCoordinator,
                 buttons: OnboardingKit.OnboardingButtons(
                     primary: OnboardingKit.OnboardingButtonInfoModel(
                         title: .Onboarding.Modern.TermsOfService.AgreementButtonTitleV3,
-                        action: OnboardingActions.syncSignIn
+                        action: OnboardingActions.forwardOneCard
                     )
                 ),
                 multipleChoiceButtons: [],

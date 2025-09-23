@@ -41,7 +41,6 @@ final class HomepageDiffableDataSource:
         case topSiteEmpty
         case searchBar
         case jumpBackIn(JumpBackInTabConfiguration)
-        case jumpBackInSyncedTab(JumpBackInSyncedTabConfiguration)
         case bookmark(BookmarkConfiguration)
         case merino(MerinoStoryConfiguration)
         case customizeHomepage
@@ -70,8 +69,6 @@ final class HomepageDiffableDataSource:
                 return .topSite
             case .jumpBackIn:
                 return .jumpBackInTab
-            case .jumpBackInSyncedTab:
-                return .jumpBackInSyncedTab
             case .bookmark:
                 return .bookmark
             case .merino:
@@ -174,14 +171,6 @@ final class HomepageDiffableDataSource:
             .prefix(updatedConfig.getMaxNumberOfLocalTabsLayout)
             .compactMap { .jumpBackIn($0) }
 
-        // Determines if remote tab should appear first depending on device size
-        if let mostRecentSyncedTab = state.mostRecentSyncedTab {
-            if updatedConfig.layoutType == .compact {
-                tabs.append(.jumpBackInSyncedTab(mostRecentSyncedTab))
-            } else {
-                tabs.insert(.jumpBackInSyncedTab(mostRecentSyncedTab), at: 0)
-            }
-        }
         guard !tabs.isEmpty else { return nil }
         return (tabs, updatedConfig)
     }

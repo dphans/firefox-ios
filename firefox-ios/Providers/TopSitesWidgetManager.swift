@@ -6,7 +6,7 @@ import Foundation
 import WidgetKit
 import Shared
 import Common
-import Storage
+
 
 protocol TopSitesWidget {
     /// Write top sites to widgetkit

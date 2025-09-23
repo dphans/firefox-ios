@@ -58,7 +58,6 @@ final class SearchSettingsTableViewController: ThemedTableViewController, Featur
     private enum FirefoxSuggestItem: Int, CaseIterable {
         case browsingHistory
         case bookmarks
-        case syncedTabs
         case nonSponsored
         case sponsored
         // Disable temporary `privateSuggestions` option for Enhanced Firefox Suggest Experiment v125.
@@ -256,17 +255,6 @@ final class SearchSettingsTableViewController: ThemedTableViewController, Featur
                     ),
                     cell: cell,
                     selector: #selector(didToggleBookmarksSuggestions)
-                )
-
-            case FirefoxSuggestItem.syncedTabs.rawValue:
-                buildSettingWith(
-                    prefKey: PrefsKeys.SearchSettings.showFirefoxSyncedTabsSuggestions,
-                    defaultValue: model.shouldShowSyncedTabsSuggestions,
-                    titleText: String.localizedStringWithFormat(
-                        .Settings.Search.Suggest.SearchSyncedTabs
-                    ),
-                    cell: cell,
-                    selector: #selector(didToggleSyncedTabsSuggestions)
                 )
 
             case FirefoxSuggestItem.nonSponsored.rawValue:
@@ -588,8 +576,6 @@ final class SearchSettingsTableViewController: ThemedTableViewController, Featur
 //            shouldShowPrivateSuggestionsSetting = model.shouldShowBookmarksSuggestions &&
 //            !model.shouldShowBrowsingHistorySuggestions &&
 //            !model.shouldShowSyncedTabsSuggestions
-        case .syncedTabs:
-            model.shouldShowSyncedTabsSuggestions = toggle.isOn
 //            shouldShowPrivateSuggestionsSetting = model.shouldShowSyncedTabsSuggestions &&
 //            !model.shouldShowBrowsingHistorySuggestions &&
 //            !model.shouldShowBookmarksSuggestions
@@ -661,11 +647,6 @@ extension SearchSettingsTableViewController {
     @objc
     func didToggleBookmarksSuggestions(_ toggle: ThemedSwitch) {
         didToggleFirefoxSuggestions(toggle, suggestionType: .bookmarks)
-    }
-
-    @objc
-    func didToggleSyncedTabsSuggestions(_ toggle: ThemedSwitch) {
-        didToggleFirefoxSuggestions(toggle, suggestionType: .syncedTabs)
     }
 
     @objc

@@ -4,7 +4,7 @@
 
 import UIKit
 import Shared
-import Storage
+
 import Account
 import SwiftUI
 import Common
@@ -133,7 +133,6 @@ class DevicePickerViewController: UITableViewController {
             self?.refreshControl?.endRefreshing()
         }
 
-        RustFirefoxAccounts.shared.accountManager?.deviceConstellation()?.refreshState()
         loadList()
     }
 
@@ -161,40 +160,6 @@ class DevicePickerViewController: UITableViewController {
     }
 
     private func loadList() {
-        guard let state = RustFirefoxAccounts.shared.accountManager?.deviceConstellation()?.state() else {
-            self.loadingState = .loaded
-            return
-        }
-
-        let currentIds = self.devices.map { $0.id ?? "" }.sorted()
-        let newIds = state.remoteDevices.map { $0.id }.sorted()
-        if !currentIds.isEmpty, currentIds == newIds {
-            return
-        }
-
-        self.devices = state.remoteDevices.compactMap { device in
-            guard device.capabilities.contains(.sendTab) else { return nil }
-
-            let typeString = "\(device.deviceType)"
-            let lastAccessTime = device.lastAccessTime == nil ? nil : UInt64(clamping: device.lastAccessTime!)
-            return RemoteDevice(id: device.id,
-                                name: device.displayName,
-                                type: typeString,
-                                isCurrentDevice: device.isCurrentDevice,
-                                lastAccessTime: lastAccessTime,
-                                availableCommands: nil)
-        }
-
-        if self.devices.isEmpty {
-            self.navigationItem.rightBarButtonItem = nil
-        } else {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: .SendToSendButtonTitle,
-                                                                     style: .done,
-                                                                     target: self,
-                                                                     action: #selector(self.send))
-            self.navigationItem.rightBarButtonItem?.isEnabled = false
-        }
-
         self.loadingState = .loaded
         self.tableView.reloadData()
     }
@@ -303,7 +268,6 @@ class DevicePickerViewController: UITableViewController {
 
     @objc
     func refresh() {
-        RustFirefoxAccounts.shared.accountManager?.deviceConstellation()?.refreshState()
         if let refreshControl = refreshControl {
             refreshControl.beginRefreshing()
             let height = -(refreshControl.bounds.size.height + (navigationController?.navigationBar.bounds.size.height ?? 0))

@@ -4,7 +4,7 @@
 
 import UIKit
 import Shared
-import Storage
+
 import Common
 import SiteImageView
 

@@ -296,7 +296,6 @@ struct AccessibilityIdentifiers {
         static let deleteTabsOlderThan1DayButton = "TabTrayController.deleteButton.olderThan1Day"
         static let deleteTabsOlderThan1WeekButton = "TabTrayController.deleteButton.olderThan1Week"
         static let deleteTabsOlderThan1MonthButton = "TabTrayController.deleteButton.olderThan1Month"
-        static let syncedTabs = "Synced Tabs"
         static let closeAllTabsButton = "closeAllTabsButtonTabTray"
         static let newTabButton = "newTabButtonTabTray"
         static let doneButton = "doneButtonTabTray"

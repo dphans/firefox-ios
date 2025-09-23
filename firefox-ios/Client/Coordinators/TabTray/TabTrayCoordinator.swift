@@ -97,8 +97,6 @@ class TabTrayCoordinator: BaseCoordinator,
             makeTabsCoordinator(navigationController: navigationController)
         case .privateTabs:
             makeTabsCoordinator(navigationController: navigationController)
-        case .syncedTabs:
-            makeRemoteTabsCoordinator(navigationController: navigationController, for: tabManager.windowUUID)
         }
     }
 
@@ -107,17 +105,6 @@ class TabTrayCoordinator: BaseCoordinator,
         let tabCoordinator = TabsCoordinator(router: router)
         add(child: tabCoordinator)
         tabCoordinator.parentCoordinator = self
-    }
-
-    private func makeRemoteTabsCoordinator(navigationController: UINavigationController, for window: WindowUUID) {
-        guard !childCoordinators.contains(where: { $0 is RemoteTabsCoordinator }) else { return }
-        let router = DefaultRouter(navigationController: navigationController)
-        let remoteTabsCoordinator = RemoteTabsCoordinator(profile: profile,
-                                                          router: router,
-                                                          windowUUID: window)
-        add(child: remoteTabsCoordinator)
-        remoteTabsCoordinator.parentCoordinator = self
-        (navigationController.topViewController as? RemoteTabsPanel)?.remoteTabsDelegate = remoteTabsCoordinator
     }
 
     // MARK: - ParentCoordinatorDelegate

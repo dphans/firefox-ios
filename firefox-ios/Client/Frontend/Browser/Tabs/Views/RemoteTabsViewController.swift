@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import Common
-import Storage
+
 import SiteImageView
 
 import enum MozillaAppServices.VisitType
@@ -130,7 +130,6 @@ class RemoteTabsViewController: UIViewController,
         tableView.alwaysBounceVertical = false
 
         tableView.sectionHeaderTopPadding = 0.0
-        tableView.accessibilityIdentifier = AccessibilityIdentifiers.TabTray.syncedTabs
 
         view.addSubview(tableView)
         view.addSubview(emptyView)

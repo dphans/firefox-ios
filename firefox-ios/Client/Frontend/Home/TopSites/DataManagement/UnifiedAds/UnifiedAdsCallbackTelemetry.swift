@@ -4,7 +4,7 @@
 
 import Common
 import Shared
-import Storage
+
 
 /// Send click and impression telemetry using the unified tile callbacks
 protocol UnifiedAdsCallbackTelemetry {

@@ -642,7 +642,6 @@ public final class RustLogins: LoginsProtocol, KeyManager, @unchecked Sendable {
                 self.logger.log("Logins key was corrupted, new one generated",
                                 level: .warning,
                                 category: .storage)
-                GleanMetrics.LoginsStoreKeyRegeneration.corrupt.record()
                 self.resetLoginsAndKey(completion: completion)
             }
         } catch let error as NSError {
@@ -660,7 +659,6 @@ public final class RustLogins: LoginsProtocol, KeyManager, @unchecked Sendable {
         self.logger.log("Logins key lost due to storage malfunction, new one generated",
                         level: .warning,
                         category: .storage)
-        GleanMetrics.LoginsStoreKeyRegeneration.other.record()
         self.resetLoginsAndKey(completion: completion)
     }
 
@@ -670,7 +668,6 @@ public final class RustLogins: LoginsProtocol, KeyManager, @unchecked Sendable {
         self.logger.log("Logins key lost, new one generated",
                         level: .warning,
                         category: .storage)
-        GleanMetrics.LoginsStoreKeyRegeneration.lost.record()
         self.resetLoginsAndKey(completion: completion)
     }
 
@@ -695,7 +692,6 @@ public final class RustLogins: LoginsProtocol, KeyManager, @unchecked Sendable {
             if hasLogins {
                 // Since the key data isn't present and we have login records in
                 // the database, we both clear the database and reset the key.
-                GleanMetrics.LoginsStoreKeyRegeneration.keychainDataLost.record()
                 self.resetLoginsAndKey(completion: completion)
             } else {
                 // There are no records in the database so we don't need to wipe any

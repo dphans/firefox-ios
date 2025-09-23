@@ -66,9 +66,7 @@ class AdvancedAccountSettingViewController: SettingsTableViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if let profile {
-            RustFirefoxAccounts.reconfig(prefs: profile.prefs) { _ in }
-        }
+        
     }
 
     override func generateSettings() -> [SettingSection] {

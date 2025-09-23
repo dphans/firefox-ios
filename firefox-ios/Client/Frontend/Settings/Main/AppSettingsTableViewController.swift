@@ -15,7 +15,6 @@ import struct MozillaAppServices.VisitObservation
 protocol SettingsFlowDelegate: AnyObject,
                                GeneralSettingsDelegate,
                                PrivacySettingsDelegate,
-                               AccountSettingsDelegate,
                                AboutSettingsDelegate,
                                SupportSettingsDelegate {
     @MainActor
@@ -298,7 +297,6 @@ class AppSettingsTableViewController: SettingsTableViewController,
         setupDataSettings()
         var settings = [SettingSection]()
         settings += getDefaultBrowserSetting()
-        settings += getAccountSetting()
         settings += getGeneralSettings()
         settings += getPrivacySettings()
         settings += getSupportSettings()
@@ -317,28 +315,6 @@ class AppSettingsTableViewController: SettingsTableViewController,
 
         return [SettingSection(footerTitle: footerTitle,
                                children: [DefaultBrowserSetting(theme: themeManager.getCurrentTheme(for: windowUUID))])]
-    }
-
-    private func getAccountSetting() -> [SettingSection] {
-        let accountSectionTitle = NSAttributedString(string: .FxAFirefoxAccount)
-
-        let attributedString = NSAttributedString(string: .Settings.Sync.ButtonDescription)
-        let accountFooterText = !(profile?.hasAccount() ?? false) ? attributedString : nil
-
-        var settings = [
-            // Without a Firefox Account:
-            ConnectSetting(settings: self, settingsDelegate: parentCoordinator),
-            AdvancedAccountSetting(settings: self, isHidden: showDebugSettings, settingsDelegate: parentCoordinator),
-            // With a Firefox Account:
-            AccountStatusSetting(settings: self, settingsDelegate: parentCoordinator),
-            SyncNowSetting(settings: self, settingsDelegate: parentCoordinator)
-        ]
-        if AppInfo.isChinaEdition, let profile {
-            settings.append(ChinaSyncServiceSetting(profile: profile, settingsDelegate: self))
-        }
-        return [
-            SettingSection(title: accountSectionTitle, footerTitle: accountFooterText, children: settings)
-        ]
     }
 
     private func getGeneralSettings() -> [SettingSection] {

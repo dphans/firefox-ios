@@ -5,7 +5,7 @@
 import Common
 import ComponentLibrary
 import Shared
-import Storage
+
 import Redux
 import UIKit
 
@@ -738,8 +738,6 @@ private extension LegacyHomepageViewController {
         }
 
         viewModel.jumpBackInViewModel.syncedTabsShowAllAction = { [weak self] in
-            self?.homePanelDelegate?.homePanelDidRequestToOpenTabTray(focusedSegment: .syncedTabs)
-
             var extras: [String: String]?
             if let isZeroSearch = self?.viewModel.isZeroSearch {
                 extras = TelemetryWrapper.getOriginExtras(isZeroSearch: isZeroSearch)

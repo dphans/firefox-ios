@@ -5,7 +5,7 @@
 import Common
 import MozillaAppServices
 import Shared
-import Storage
+
 import WebKit
 
 // Handles recording visits to websites, which will be displayed in the History Panel.

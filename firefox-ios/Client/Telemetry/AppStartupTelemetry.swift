@@ -4,7 +4,7 @@
 
 import Foundation
 import Glean
-import Storage
+
 import Common
 
 import class MozillaAppServices.BookmarkFolderData

@@ -24,7 +24,6 @@ final class SettingsCoordinator: BaseCoordinator,
                                  GeneralSettingsDelegate,
                                  PrivacySettingsDelegate,
                                  PasswordManagerCoordinatorDelegate,
-                                 AccountSettingsDelegate,
                                  AboutSettingsDelegate,
                                  ParentCoordinatorDelegate,
                                  QRCodeNavigationHandler,
@@ -144,18 +143,6 @@ final class SettingsCoordinator: BaseCoordinator,
 
         case .clearPrivateData:
             let viewController = ClearPrivateDataTableViewController(profile: profile, tabManager: tabManager)
-            return viewController
-
-        case .fxa:
-            let fxaParams = FxALaunchParams(entrypoint: .fxaDeepLinkSetting, query: [:])
-            let viewController = FirefoxAccountSignInViewController.getSignInOrFxASettingsVC(
-                fxaParams,
-                flowType: .emailLoginFlow,
-                referringPage: .settings,
-                profile: profile,
-                windowUUID: windowUUID
-            )
-            (viewController as? FirefoxAccountSignInViewController)?.qrCodeNavigationHandler = self
             return viewController
 
         case .theme:
@@ -442,35 +429,9 @@ final class SettingsCoordinator: BaseCoordinator,
 
     // MARK: AccountSettingsDelegate
 
-    func pressedConnectSetting() {
-        let fxaParams = FxALaunchParams(entrypoint: .connectSetting, query: [:])
-        let viewController = FirefoxAccountSignInViewController(profile: profile,
-                                                                parentType: .settings,
-                                                                deepLinkParams: fxaParams,
-                                                                windowUUID: windowUUID)
-        viewController.qrCodeNavigationHandler = self
-        router.push(viewController)
-    }
-
     func pressedAdvancedAccountSetting() {
         let viewController = AdvancedAccountSettingViewController(windowUUID: windowUUID)
         viewController.profile = profile
-        router.push(viewController)
-    }
-
-    func pressedToShowSyncContent() {
-        let viewController = SyncContentSettingsViewController(windowUUID: windowUUID)
-        viewController.profile = profile
-        router.push(viewController)
-    }
-
-    func pressedToShowFirefoxAccount() {
-        let fxaParams = FxALaunchParams(entrypoint: .accountStatusSettingReauth, query: [:])
-        let viewController = FirefoxAccountSignInViewController(profile: profile,
-                                                                parentType: .settings,
-                                                                deepLinkParams: fxaParams,
-                                                                windowUUID: windowUUID)
-        viewController.qrCodeNavigationHandler = self
         router.push(viewController)
     }
 

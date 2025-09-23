@@ -7,7 +7,7 @@ import Photos
 import UIKit
 import WebKit
 import Shared
-import Storage
+
 import SnapKit
 import Account
 import MobileCoreServices
@@ -670,27 +670,7 @@ class BrowserViewController: UIViewController,
 
     @objc
     fileprivate func appMenuBadgeUpdate() {
-        let isActionNeeded = RustFirefoxAccounts.shared.isActionNeeded
-        let showWarningBadge = isActionNeeded
-
-        if isToolbarRefactorEnabled {
-            let shouldShowWarningBadge = store.state.screenState(
-                ToolbarState.self,
-                for: .toolbar,
-                window: windowUUID
-            )?.showMenuWarningBadge
-
-            guard showWarningBadge != shouldShowWarningBadge else { return }
-            let action = ToolbarAction(
-                showMenuWarningBadge: showWarningBadge,
-                windowUUID: windowUUID,
-                actionType: ToolbarActionType.showMenuWarningBadge
-            )
-            store.dispatchLegacy(action)
-        } else {
-            legacyUrlBar?.warningMenuBadge(setVisible: showWarningBadge)
-            toolbar.warningMenuBadge(setVisible: showWarningBadge)
-        }
+        
     }
 
     private func updateAddressToolbarContainerPosition(
@@ -3273,25 +3253,6 @@ class BrowserViewController: UIViewController,
 
             self.debugOpen(numberOfNewTabs: numberOfNewTabs - 1, at: url)
         })
-    }
-
-    func presentSignInViewController(_ fxaOptions: FxALaunchParams,
-                                     flowType: FxAPageType = .emailLoginFlow,
-                                     referringPage: ReferringPage = .none) {
-        let windowManager: WindowManager = AppContainer.shared.resolve()
-        windowManager.postWindowEvent(event: .syncMenuOpened, windowUUID: windowUUID)
-        let vcToPresent = FirefoxAccountSignInViewController.getSignInOrFxASettingsVC(
-            fxaOptions,
-            flowType: flowType,
-            referringPage: referringPage,
-            profile: profile,
-            windowUUID: windowUUID
-        )
-        (vcToPresent as? FirefoxAccountSignInViewController)?.qrCodeNavigationHandler = navigationHandler
-        presentThemedViewController(navItemLocation: .Left,
-                                    navItemText: .Close,
-                                    vcBeingPresented: vcToPresent,
-                                    topTabsVisible: UIDevice.current.userInterfaceIdiom == .pad)
     }
 
     // MARK: - Handle Deeplink open URL / query

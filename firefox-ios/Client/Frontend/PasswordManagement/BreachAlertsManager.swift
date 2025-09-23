@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import Foundation
-import Storage // or whichever module has the LoginsRecord class
+ // or whichever module has the LoginsRecord class
 import Shared // or whichever module has the Maybe class
 
 /// Breach structure decoded from JSON

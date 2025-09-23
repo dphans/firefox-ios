@@ -39,17 +39,6 @@ protocol OnboardingCardDelegate: AnyObject {
                                     completionIfLastCard: (() -> Void)?)
 
     @MainActor
-    func presentSignToSync(
-        windowUUID: WindowUUID,
-        with fxaOptions: FxALaunchParams,
-        selector: Selector?,
-        completion: @escaping () -> Void,
-        flowType: FxAPageType,
-        referringPage: ReferringPage,
-        qrCodeNavigationHandler: QRCodeNavigationHandler?
-    )
-
-    @MainActor
     func advance(
         numberOfPages: Int,
         from cardName: String,
@@ -131,38 +120,6 @@ extension OnboardingCardDelegate where Self: OnboardingViewControllerProtocol,
         instructionsVC.dismissDelegate = bottomSheetVC
 
         self.present(bottomSheetVC, animated: false, completion: nil)
-    }
-
-    // MARK: - Sync sign in
-    @MainActor
-    func presentSignToSync(
-        windowUUID: WindowUUID,
-        with fxaOptions: FxALaunchParams,
-        selector: Selector?,
-        completion: @escaping () -> Void,
-        flowType: FxAPageType = .emailLoginFlow,
-        referringPage: ReferringPage = .onboarding,
-        qrCodeNavigationHandler: QRCodeNavigationHandler?
-    ) {
-        let singInSyncVC = FirefoxAccountSignInViewController.getSignInOrFxASettingsVC(
-            fxaOptions,
-            flowType: flowType,
-            referringPage: referringPage,
-            profile: viewModel.profile,
-            windowUUID: windowUUID)
-        let buttonItem = UIBarButtonItem(
-            title: .SettingsSearchDoneButton,
-            style: .plain,
-            target: self,
-            action: selector)
-        buttonItem.tintColor = themeManager.getCurrentTheme(for: windowUUID).colors.actionPrimary
-        singInSyncVC.navigationItem.rightBarButtonItem = buttonItem
-        (singInSyncVC as? FirefoxAccountSignInViewController)?.qrCodeNavigationHandler = qrCodeNavigationHandler
-
-        let controller = DismissableNavigationViewController(rootViewController: singInSyncVC)
-        controller.onViewDismissed = completion
-
-        self.present(controller, animated: true)
     }
 
     // MARK: - Page helpers

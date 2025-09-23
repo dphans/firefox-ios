@@ -4,7 +4,7 @@
 
 import Common
 import UIKit
-import Storage
+
 import Shared
 import SiteImageView
 
@@ -86,7 +86,7 @@ final class BookmarksViewController: SiteTableViewController,
 
     private lazy var emptyStateView: BookmarksFolderEmptyStateView = .build { emptyStateView in
         emptyStateView.signInAction = { [weak self] in
-            self?.bookmarkCoordinatorDelegate?.showSignIn()
+            
         }
     }
 

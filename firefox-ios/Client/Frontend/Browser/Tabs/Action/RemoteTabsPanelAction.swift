@@ -4,7 +4,7 @@
 
 import Common
 import Redux
-import Storage
+
 
 import struct MozillaAppServices.Device
 

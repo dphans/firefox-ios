@@ -10,14 +10,11 @@ struct TabsPanelTelemetry {
     enum Mode: String {
         case normal
         case `private`
-        case sync
 
         var hasNewTabButton: Bool {
             switch self {
             case .normal, .private:
                 return true
-            default:
-                return false
             }
         }
     }

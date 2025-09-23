@@ -4,7 +4,7 @@
 
 import Common
 import Foundation
-import Storage
+
 import Shared
 import SiteImageView
 import WebKit

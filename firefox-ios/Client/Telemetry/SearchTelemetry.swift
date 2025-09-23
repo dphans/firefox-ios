@@ -5,7 +5,7 @@
 import Foundation
 import WebKit
 import Glean
-import Storage
+
 import Common
 
 /// Type-specific information to record in telemetry about a visible search

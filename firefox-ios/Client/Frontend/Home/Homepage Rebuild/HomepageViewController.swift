@@ -6,7 +6,7 @@ import Foundation
 import Common
 import Redux
 import Shared
-import Storage
+
 
 final class HomepageViewController: UIViewController,
                                     UICollectionViewDelegate,
@@ -523,28 +523,6 @@ final class HomepageViewController: UIViewController,
             jumpBackInCell.configure(config: tab, theme: currentTheme)
             return jumpBackInCell
 
-        case .jumpBackInSyncedTab(let config):
-            guard let syncedTabCell = collectionView?.dequeueReusableCell(
-                cellType: SyncedTabCell.self,
-                for: indexPath
-            ) else {
-                return UICollectionViewCell()
-            }
-            syncedTabCell.configure(
-                configuration: config,
-                theme: currentTheme,
-                onTapShowAllAction: { [weak self] in
-                    self?.navigateToTabTray(with: .syncedTabs)
-                },
-                onOpenSyncedTabAction: { [weak self] url in
-                    guard let self else { return }
-                    self.navigateToNewTab(with: url)
-                    self.sendItemActionWithTelemetryExtras(item: item, actionType: .didSelectItem)
-                }
-            )
-            prepareSyncedTabContextualHint(onCell: syncedTabCell)
-            return syncedTabCell
-
         case .bookmark(let item):
             guard let bookmarksCell = collectionView?.dequeueReusableCell(
                 cellType: BookmarksCell.self,
@@ -883,8 +861,6 @@ final class HomepageViewController: UIViewController,
             return state.site
         case .jumpBackIn(let config):
             return Site.createBasicSite(url: config.siteURL, title: config.titleText)
-        case .jumpBackInSyncedTab(let config):
-            return Site.createBasicSite(url: config.url.absoluteString, title: config.titleText)
         case .bookmark(let state):
             return Site.createBasicSite(url: state.site.url, title: state.site.title)
         case .merino(let state):
@@ -956,8 +932,7 @@ final class HomepageViewController: UIViewController,
     /// Sends telemetry data associated with tapping on a card item. The jump back in synced card item
     /// is handled differently due to how tapping is handled for the cell. See `onOpenSyncedTabAction` in this file.
     private func dispatchDidSelectCardItemAction(with item: HomepageItem) {
-        if case .jumpBackInSyncedTab = item { return }
-        sendItemActionWithTelemetryExtras(item: item, actionType: .didSelectItem)
+        
     }
 
     /// Sends generic telemetry extras to middleware, sends additional extras `topSitesTelemetryConfig` for sponsored sites

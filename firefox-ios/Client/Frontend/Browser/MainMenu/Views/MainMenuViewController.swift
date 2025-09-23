@@ -413,17 +413,6 @@ class MainMenuViewController: UIViewController,
         )
     }
 
-    private func dispatchSyncSignInAction() {
-        store.dispatchLegacy(
-            MainMenuAction(
-                windowUUID: self.windowUUID,
-                actionType: MainMenuActionType.tapNavigateToDestination,
-                navigationDestination: MenuNavigationDestination(.syncSignIn),
-                currentTabInfo: menuState.currentTabInfo
-            )
-        )
-    }
-
     private func dispatchSiteProtectionAction() {
         store.dispatchLegacy(
             MainMenuAction(

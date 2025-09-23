@@ -4,7 +4,7 @@
 
 import Common
 import UIKit
-import Storage
+
 import SiteImageView
 
 class PhotonActionSheetSiteHeaderView: UITableViewHeaderFooterView, ReusableCell, ThemeApplicable {

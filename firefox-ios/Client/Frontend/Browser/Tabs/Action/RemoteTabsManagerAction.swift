@@ -4,7 +4,7 @@
 
 import Common
 import Redux
-import Storage
+
 
 struct RemoteTabConfiguration {
     let client: RemoteClient

@@ -6,7 +6,7 @@ import Common
 import Foundation
 import Shared
 import SiteImageView
-import Storage
+
 import UIKit
 
 /// The TopSite cell that appears in the ASHorizontalScrollView.

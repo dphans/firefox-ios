@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CommonCrypto/CommonCrypto.h>
+#import <sqlite3.h>
 
 #import "FSReadingList.h"
 
@@ -10,6 +11,6 @@
 
 #import "Account-Bridging-Header.h"
 #import "Shared-Bridging-Header.h"
-#import "Storage-Bridging-Header.h"
+#import "Client-Bridging-Header.h"
 
 #endif

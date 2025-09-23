@@ -76,9 +76,6 @@ final class OnboardingService: FeatureFlaggable {
         case .forwardThreeCard:
             completion(.success(.advance(numberOfPages: 3)))
 
-        case .syncSignIn:
-            handleSyncSignIn(from: cardName, with: activityEventHelper)
-
         case .setDefaultBrowser:
             handleSetDefaultBrowser(with: activityEventHelper)
             completion(.success(.none))
@@ -167,17 +164,6 @@ final class OnboardingService: FeatureFlaggable {
         askForNotificationPermission(from: cardName)
     }
 
-    private func handleSyncSignIn(
-        from cardName: String,
-        with activityEventHelper: ActivityEventHelper
-    ) {
-        activityEventHelper.chosenOptions.insert(.syncSignIn)
-        activityEventHelper.updateOnboardingUserActivationEvent()
-
-        let fxaParams = FxALaunchParams(entrypoint: .introOnboarding, query: [:])
-        presentSignToSync(with: fxaParams, profile: profile)
-    }
-
     private func handleSetDefaultBrowser(with activityEventHelper: ActivityEventHelper) {
         activityEventHelper.chosenOptions.insert(.setAsDefaultBrowser)
         activityEventHelper.updateOnboardingUserActivationEvent()
@@ -229,18 +215,6 @@ final class OnboardingService: FeatureFlaggable {
         hasRegisteredForDefaultBrowserNotification = true
     }
 
-    private func presentSignToSync(with params: FxALaunchParams, profile: Profile) {
-        guard let delegate = delegate else { return }
-
-        let signInVC = createSignInViewController(
-            windowUUID: windowUUID,
-            params: params,
-            profile: profile
-        )
-
-        delegate.present(signInVC, animated: true, completion: nil)
-    }
-
     private func presentDefaultBrowserPopup(
         from popupViewModel: OnboardingDefaultBrowserModelProtocol,
         completion: @escaping @MainActor () -> Void
@@ -263,30 +237,6 @@ final class OnboardingService: FeatureFlaggable {
         )
 
         delegate.present(privacyVC, animated: true, completion: nil)
-    }
-
-    private func createSignInViewController(
-        windowUUID: WindowUUID,
-        params: FxALaunchParams,
-        profile: Profile
-    ) -> UIViewController {
-        let singInSyncVC = FirefoxAccountSignInViewController.getSignInOrFxASettingsVC(
-            params,
-            flowType: .emailLoginFlow,
-            referringPage: .onboarding,
-            profile: profile,
-            windowUUID: windowUUID)
-        let buttonItem = UIBarButtonItem(
-            title: .SettingsSearchDoneButton,
-            style: .plain,
-            target: self,
-            action: #selector(dismissSelector))
-        buttonItem.tintColor = themeManager.getCurrentTheme(for: windowUUID).colors.actionPrimary
-        singInSyncVC.navigationItem.rightBarButtonItem = buttonItem
-        (singInSyncVC as? FirefoxAccountSignInViewController)?.qrCodeNavigationHandler = qrCodeNavigationHandler
-
-        let controller = DismissableNavigationViewController(rootViewController: singInSyncVC)
-        return controller
     }
 
     private func createDefaultBrowserPopupViewController(

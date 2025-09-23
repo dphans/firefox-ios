@@ -122,12 +122,7 @@ public class RustRemoteTabs: @unchecked Sendable {
                 return deferMaybe(failureValue)
             }
 
-            guard let records = result.successValue else {
-                return deferMaybe(nil)
-            }
-
-            let client = records.first(where: { $0.clientId == fxaDeviceId })?.toRemoteClient()
-            return deferMaybe(client)
+            return deferMaybe(nil)
         }
     }
 

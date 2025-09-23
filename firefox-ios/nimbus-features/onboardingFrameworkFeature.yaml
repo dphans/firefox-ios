@@ -133,22 +133,6 @@ features:
               onboarding-type: fresh-install
               prerequisites:
                 - ALWAYS
-            sign-to-sync:
-              card-type: basic
-              order: 20
-              title: Onboarding/Onboarding.Sync.Title.v120
-              body: Onboarding/Onboarding.Sync.Description.v123
-              image: sync-devices
-              buttons:
-                primary:
-                  title: Onboarding/Onboarding.Sync.SignIn.Action.v114
-                  action: sync-sign-in
-                secondary:
-                  title: Onboarding/Onboarding.Sync.Skip.Action.v114
-                  action: forward-one-card
-              onboarding-type: fresh-install
-              prerequisites:
-                - ALWAYS
             customization-theme:
               card-type: multiple-choice
               order: 40
@@ -205,22 +189,6 @@ features:
               onboarding-type: upgrade
               prerequisites:
                 - NEVER
-            update-sign-to-sync:
-              card-type: basic
-              order: 20
-              title: Upgrade/Upgrade.SyncSign.Title.v114
-              body: Upgrade/Upgrade.SyncSign.Description.v114
-              image: sync-devices
-              buttons:
-                primary:
-                  title: Upgrade/Upgrade.SyncSign.Action.v114
-                  action: sync-sign-in
-                secondary:
-                  title: Onboarding/Onboarding.LaterAction.v114
-                  action: forward-one-card
-              onboarding-type: upgrade
-              prerequisites:
-                - NEVER
             welcome-modern:
               card-type: basic
               order: 10
@@ -242,23 +210,6 @@ features:
                   - Onboarding/DefaultBrowserPopup.FirstLabel.v114
                   - Onboarding/DefaultBrowserPopup.SecondLabel.v114
                   - Onboarding/DefaultBrowserPopup.ThirdLabel.v114
-              onboarding-type: fresh-install
-              prerequisites:
-                - ALWAYS
-              uiVariant: modern
-            sign-to-sync-modern:
-              card-type: basic
-              order: 30
-              title: Onboarding/Onboarding.Modern.Sync.Title.v140
-              body: Onboarding/Onboarding.Modern.Sync.Description.v140
-              image: sync-with-icons
-              buttons:
-                primary:
-                  title: Onboarding/Onboarding.Modern.Sync.SignIn.Action.v140
-                  action: sync-sign-in
-                secondary:
-                  title: Onboarding/Onboarding.Modern.Sync.Skip.Action.v140
-                  action: forward-one-card
               onboarding-type: fresh-install
               prerequisites:
                 - ALWAYS
@@ -519,9 +470,6 @@ enums:
       forward-three-card:
         description: >
           Will take the user to the next card
-      sync-sign-in:
-        description: >
-          Will take the user to the sync sign in flow
       request-notifications:
         description: >
           Will request to allow notifications from the user

@@ -4,7 +4,7 @@
 
 import SwiftUI
 import Common
-import Storage
+
 import struct MozillaAppServices.UpdatableAddressFields
 import struct MozillaAppServices.Address
 

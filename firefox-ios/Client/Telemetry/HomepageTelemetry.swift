@@ -9,7 +9,6 @@ struct HomepageTelemetry {
     enum ItemType: String {
         case topSite = "top_site"
         case jumpBackInTab = "jump_back_in_tab"
-        case jumpBackInSyncedTab = "jump_back_in_synced_tab"
         case jumpBackInTabShowAll = "jump_back_in_show_all_button"
         case jumpBackInSyncedTabShowAll = "synced_show_all_button"
         case bookmark = "bookmark"
@@ -21,7 +20,7 @@ struct HomepageTelemetry {
             switch self {
             case .topSite:
                 return "top_sites"
-            case .jumpBackInTab, .jumpBackInSyncedTab, .jumpBackInTabShowAll, .jumpBackInSyncedTabShowAll:
+            case .jumpBackInTab, .jumpBackInTabShowAll, .jumpBackInSyncedTabShowAll:
                 return "jump_back_in"
             case .bookmark, .bookmarkShowAll:
                 return "bookmarks"

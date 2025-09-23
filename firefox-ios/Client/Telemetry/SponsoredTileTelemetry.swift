@@ -4,7 +4,7 @@
 
 import Foundation
 import Glean
-import Storage
+
 
 // Telemetry for the Sponsored tiles located in the Top sites on the Firefox home page
 // Using Pings to send the telemetry events

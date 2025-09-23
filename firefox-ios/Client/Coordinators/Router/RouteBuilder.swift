@@ -62,14 +62,6 @@ final class RouteBuilder: FeatureFlaggable {
                     return nil
                 }
 
-            case .fxaSignIn where urlScanner.value(query: "signin") != nil:
-                return .fxaSignIn(
-                    params: FxALaunchParams(
-                        entrypoint: .fxaDeepLinkNavigation,
-                        query: url.getQuery()
-                    )
-                )
-
             case .openUrl:
                 return .search(url: urlQuery, isPrivate: isPrivate)
 
@@ -107,28 +99,6 @@ final class RouteBuilder: FeatureFlaggable {
             case .widgetSmallQuickLinkClosePrivateTabs, .widgetMediumQuickLinkClosePrivateTabs:
                 // Widget Quick links - medium - close private tabs
                 return .action(action: .closePrivateTabs)
-
-            case .widgetTabsMediumOpenUrl:
-                // Widget Tabs Quick View - medium
-                let tabs = SimpleTab.getSimpleTabs()
-                if let uuid = urlScanner.value(query: "uuid"), !tabs.isEmpty, let tab = tabs[uuid] {
-                    return .searchURL(url: tab.url, tabId: uuid)
-                } else {
-                    return .search(url: nil, isPrivate: false)
-                }
-
-            case .widgetTabsLargeOpenUrl:
-                // Widget Tabs Quick View - large
-                let tabs = SimpleTab.getSimpleTabs()
-                if let uuid = urlScanner.value(query: "uuid"), !tabs.isEmpty {
-                    let tab = tabs[uuid]
-                    return .searchURL(url: tab?.url, tabId: uuid)
-                } else {
-                    return .search(url: nil, isPrivate: false)
-                }
-
-            case .fxaSignIn:
-                return nil
 
             case .sharesheet:
                 guard let shareURLString = urlScanner.value(query: "url"),
@@ -230,7 +200,7 @@ final class RouteBuilder: FeatureFlaggable {
 
     private func recordTelemetry(input: DeeplinkInput.Host, isPrivate: Bool) {
         switch input {
-        case .deepLink, .fxaSignIn, .glean, .sharesheet:
+        case .deepLink, .glean, .sharesheet:
             return
         case .widgetMediumTopSitesOpenUrl:
             TelemetryWrapper.recordEvent(category: .action, method: .open, object: .mediumTopSitesWidget)
@@ -250,10 +220,6 @@ final class RouteBuilder: FeatureFlaggable {
             TelemetryWrapper.recordEvent(category: .action, method: .open, object: .smallQuickActionClosePrivate)
         case .widgetMediumQuickLinkClosePrivateTabs:
             TelemetryWrapper.recordEvent(category: .action, method: .open, object: .mediumQuickActionClosePrivate)
-        case .widgetTabsMediumOpenUrl:
-            TelemetryWrapper.recordEvent(category: .action, method: .open, object: .mediumTabsOpenUrl)
-        case .widgetTabsLargeOpenUrl:
-            TelemetryWrapper.recordEvent(category: .action, method: .open, object: .largeTabsOpenUrl)
         case .openText:
             sendAppExtensionTelemetry(object: .searchText)
         case .openUrl:

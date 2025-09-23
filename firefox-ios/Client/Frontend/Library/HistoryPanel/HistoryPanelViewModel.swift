@@ -5,7 +5,7 @@
 import Foundation
 import Common
 import Shared
-import Storage
+
 import SwiftUI
 
 import struct MozillaAppServices.VisitTransitionSet

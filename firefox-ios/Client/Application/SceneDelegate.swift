@@ -206,14 +206,6 @@ class SceneDelegate: UIResponder,
                                               tabSetting: NewTabAccessors.getNewTabPage(profile.prefs)) {
             handle(route: route)
         }
-
-        // Check if our connection options include a user response to a push
-        // notification that is for Sent Tabs. If so, route the related tab URLs.
-        let sentTabsKey = NotificationSentTabs.sentTabsKey
-        if let notification = connectionOptions.notificationResponse?.notification,
-           let userInfo = notification.request.content.userInfo[sentTabsKey] as? [[String: Any]] {
-            handleConnectionOptionsSentTabs(userInfo)
-        }
     }
 
     private func handleConnectionOptionsSentTabs(_ userInfo: [[String: Any]]) {

@@ -5,7 +5,7 @@
 import Common
 import Redux
 import Shared
-import Storage
+
 
 /// State for the jump back in section that is used in the homepage view
 struct JumpBackInSectionState: StateType, Equatable, Hashable {

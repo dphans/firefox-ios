@@ -25,10 +25,6 @@ struct TabTrayState: ScreenState, Equatable {
         return selectedPanel.navTitle
     }
 
-    var isSyncTabsPanel: Bool {
-        return selectedPanel == .syncedTabs
-    }
-
     var isNormalTabsPanel: Bool {
         return selectedPanel == .tabs
     }

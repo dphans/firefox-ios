@@ -5,7 +5,7 @@
 import Account
 import Foundation
 import Shared
-import Storage
+
 import UIKit
 import SwiftUI
 import Common
@@ -26,7 +26,6 @@ protocol ToolBarActionMenuDelegate: AnyObject {
     func showCustomizeHomePage()
     func showZoomPage(tab: Tab)
     func showCreditCardSettings()
-    func showSignInView(fxaParameters: FxASignInViewParameters)
     func showFilePicker(fileURL: URL)
     func showEditBookmark()
     func showTrackingProtection()
@@ -226,9 +225,6 @@ final class MainMenuActionHelper: @unchecked Sendable, PhotonActionSheetProtocol
             let readingListSection = getReadingListSection()
             append(to: &section, action: readingListSection)
         }
-
-        let syncAction = syncMenuButton()
-        append(to: &section, action: syncAction)
 
         return section
     }
@@ -508,76 +504,31 @@ final class MainMenuActionHelper: @unchecked Sendable, PhotonActionSheetProtocol
     @MainActor
     private func getNightModeAction() -> [PhotonRowActions] {
         var items: [PhotonRowActions] = []
-
+        
         let nightModeEnabled = NightModeHelper.isActivated()
-
+        
         let nightModeIcon: String = nightModeEnabled
-            ? StandardImageIdentifiers.Large.nightModeFill
-            : StandardImageIdentifiers.Large.nightMode
-
+        ? StandardImageIdentifiers.Large.nightModeFill
+        : StandardImageIdentifiers.Large.nightMode
+        
         let nightMode = SingleActionViewModel(
             title: getNightModeTitle(nightModeEnabled),
             iconString: nightModeIcon,
             isEnabled: nightModeEnabled
         ) { _ in
             NightModeHelper.toggle()
-
+            
             if NightModeHelper.isActivated() {
                 TelemetryWrapper.recordEvent(category: .action, method: .tap, object: .nightModeEnabled)
             } else {
                 TelemetryWrapper.recordEvent(category: .action, method: .tap, object: .nightModeDisabled)
             }
-
+            
             self.themeManager.applyThemeUpdatesToWindows()
         }.items
         items.append(nightMode)
-
+        
         return items
-    }
-
-    private func syncMenuButton() -> PhotonRowActions? {
-        let action: @Sendable (SingleActionViewModel) -> Void = { [weak self] action in
-            let fxaParams = FxALaunchParams(entrypoint: .browserMenu, query: [:])
-            let parameters = FxASignInViewParameters(launchParameters: fxaParams,
-                                                     flowType: .emailLoginFlow,
-                                                     referringPage: .appMenu)
-            self?.delegate?.showSignInView(fxaParameters: parameters)
-            TelemetryWrapper.recordEvent(category: .action, method: .tap, object: .signIntoSync)
-        }
-
-        let rustAccount = RustFirefoxAccounts.shared
-        let needsReAuth = rustAccount.accountNeedsReauth()
-
-        guard let userProfile = rustAccount.userProfile else {
-            return SingleActionViewModel(title: .LegacyAppMenu.SyncAndSaveData,
-                                         iconString: StandardImageIdentifiers.Large.sync,
-                                         tapHandler: action).items
-        }
-
-        let title: String = {
-            if rustAccount.accountNeedsReauth() {
-                return .FxAAccountVerifyPassword
-            }
-            return userProfile.displayName ?? userProfile.email
-        }()
-
-        let warningImage = StandardImageIdentifiers.Large.warningFill
-        let avatarImage = StandardImageIdentifiers.Large.avatarCircle
-        let iconString = needsReAuth ? warningImage : avatarImage
-
-        var iconURL: URL?
-        if let str = rustAccount.userProfile?.avatarUrl,
-            let url = URL(string: str) {
-            iconURL = url
-        }
-        let iconType: PhotonActionSheetIconType = needsReAuth ? .Image : .URL
-        let syncOption = SingleActionViewModel(title: title,
-                                               iconString: iconString,
-                                               iconURL: iconURL,
-                                               iconType: iconType,
-                                               needsIconActionableTint: needsReAuth,
-                                               tapHandler: action).items
-        return syncOption
     }
 
     // MARK: Whats New

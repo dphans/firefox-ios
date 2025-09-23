@@ -98,7 +98,6 @@ final class WindowManagerImplementation: WindowManager {
     private let logger: Logger
     private let tabDataStore: TabDataStore
     private let defaults: UserDefaultsInterface
-    private let widgetSimpleTabsCoordinator = WindowSimpleTabsCoordinator()
 
     // Ordered set of UUIDs which determines the order that windows are re-opened on iPad
     // UUIDs at the beginning of the list are prioritized over UUIDs at the end
@@ -291,8 +290,7 @@ final class WindowManagerImplementation: WindowManager {
     }
 
     private func saveSimpleTabs() {
-        let providers = allWindowTabManagers() as? [WindowSimpleTabsProvider] ?? []
-        widgetSimpleTabsCoordinator.saveSimpleTabs(for: providers)
+        
     }
 
     /// When provided a list of UUIDs of available window data files on disk,

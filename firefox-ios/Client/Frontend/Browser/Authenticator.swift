@@ -4,7 +4,7 @@
 
 import Foundation
 import Shared
-import Storage
+
 import Common
 
 import struct MozillaAppServices.LoginEntry

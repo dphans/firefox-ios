@@ -5,7 +5,7 @@
 import Common
 import Foundation
 import Redux
-import Storage
+
 
 /// Middleware to handle top sites related actions, if this gets too big, should split out the telemetry.
 final class TopSitesMiddleware: FeatureFlaggable {

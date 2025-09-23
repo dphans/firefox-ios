@@ -237,17 +237,6 @@ extension UpdateViewController: OnboardingCardDelegate {
             advance(numberOfPages: 3, from: cardName) {
                 self.didFinishFlow?()
             }
-        case .syncSignIn:
-            let fxaParams = FxALaunchParams(entrypoint: .updateOnboarding, query: [:])
-            presentSignToSync(
-                windowUUID: windowUUID,
-                with: fxaParams,
-                selector: #selector(dismissSignInViewController),
-                completion: {
-                    self.closeUpdate()
-                },
-                qrCodeNavigationHandler: qrCodeNavigationHandler
-            )
         case .readPrivacyPolicy:
             presentPrivacyPolicy(
                 windowUUID: windowUUID,

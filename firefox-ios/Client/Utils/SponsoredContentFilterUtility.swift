@@ -3,7 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import Foundation
-import Storage
+
 
 // Utility to filter sponsored content out of certain data type
 struct SponsoredContentFilterUtility {

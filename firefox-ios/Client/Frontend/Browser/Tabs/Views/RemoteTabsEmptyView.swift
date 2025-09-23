@@ -8,12 +8,7 @@ import UIKit
 import Shared
 
 protocol RemoteTabsEmptyViewDelegate: AnyObject {
-    @MainActor
-    func remotePanelDidRequestToSignIn()
-
-    @MainActor
-    func presentFxAccountSettings()
-
+    
     @MainActor
     func remotePanelDidRequestToOpenInNewTab(_ url: URL, isPrivate: Bool)
 }
@@ -91,13 +86,6 @@ class RemoteTabsEmptyView: UIView,
         emptyStateImageView.image = UIImage.templateImageNamed(StandardImageIdentifiers.Large.cloud)
         titleLabel.text =  .EmptySyncedTabsPanelStateTitle
         instructionsLabel.text = config.localizedString()
-
-        if config == .notLoggedIn || config == .failedToSync {
-            signInButton.addTarget(self, action: #selector(presentSignIn), for: .touchUpInside)
-        } else if config == .syncDisabledByUser {
-            signInButton.addTarget(self, action: #selector(openAccountSettings), for: .touchUpInside)
-        }
-
         signInButton.isHidden = shouldHideButton(config)
     }
 
@@ -140,19 +128,6 @@ class RemoteTabsEmptyView: UIView,
         instructionsLabel.textColor = theme.colors.textPrimary
         signInButton.applyTheme(theme: theme)
         backgroundColor = theme.colors.layer3
-    }
-
-    @objc
-    private func presentSignIn() {
-        if let delegate = self.delegate {
-            TelemetryWrapper.recordEvent(category: .action, method: .tap, object: .syncSignIn)
-            delegate.remotePanelDidRequestToSignIn()
-        }
-    }
-
-    @objc
-    private func openAccountSettings() {
-        delegate?.presentFxAccountSettings()
     }
 
     // MARK: - InsetUpdatable

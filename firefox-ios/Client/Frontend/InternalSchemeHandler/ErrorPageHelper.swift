@@ -7,7 +7,7 @@ import Foundation
 import WebKit
 import GCDWebServers
 import Shared
-import Storage
+
 
 private let MozDomain = "mozilla"
 private let MozErrorDownloadsNotEnabled = 100

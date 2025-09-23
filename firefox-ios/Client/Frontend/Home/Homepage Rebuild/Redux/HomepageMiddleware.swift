@@ -39,7 +39,7 @@ final class HomepageMiddleware: FeatureFlaggable {
             else { return }
 
             self.homepageTelemetry.sendItemTappedTelemetryEvent(
-                for: panelType == .syncedTabs ? .jumpBackInSyncedTabShowAll : .jumpBackInTabShowAll
+                for: .jumpBackInTabShowAll
             )
 
         case HomepageActionType.didSelectItem:

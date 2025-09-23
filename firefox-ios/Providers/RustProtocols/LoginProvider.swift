@@ -4,7 +4,7 @@
 
 import Foundation
 import MozillaAppServices
-import Storage
+
 
 protocol LoginProvider: AnyObject {
     func searchLoginsWithQuery(

@@ -20,9 +20,6 @@ protocol MainMenuCoordinatorDelegate: AnyObject {
     func showFindInPage()
 
     @MainActor
-    func showSignInView(fxaParameters: FxASignInViewParameters?)
-
-    @MainActor
     func updateZoomPageBarVisibility()
 
     @MainActor
@@ -125,14 +122,6 @@ class MainMenuCoordinator: BaseCoordinator, FeatureFlaggable {
 
         case .settings:
             navigationHandler?.showSettings(at: .general)
-
-        case .syncSignIn:
-            let fxaParameters = FxASignInViewParameters(
-                launchParameters: FxALaunchParams(entrypoint: .browserMenu, query: [:]),
-                flowType: .emailLoginFlow,
-                referringPage: .appMenu
-            )
-            navigationHandler?.showSignInView(fxaParameters: fxaParameters)
 
         case .printSheetV2:
             navigationHandler?.showPrintSheet()

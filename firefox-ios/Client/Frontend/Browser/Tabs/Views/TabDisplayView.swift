@@ -176,9 +176,6 @@ final class TabDisplayView: UIView,
             guard !state.isPrivateMode else { return }
         case .privateTabs:
             guard state.isPrivateMode else { return }
-        case .syncedTabs:
-            // This view does not handle synced tabs
-            return
         }
 
         tabsState = state

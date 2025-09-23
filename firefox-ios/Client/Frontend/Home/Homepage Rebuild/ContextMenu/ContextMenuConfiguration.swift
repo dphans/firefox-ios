@@ -2,7 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-import Storage
+
 
 struct ContextMenuConfiguration: Equatable {
     var site: Site?
@@ -26,7 +26,6 @@ struct ContextMenuConfiguration: Equatable {
 enum MenuType {
     case topSite
     case jumpBackIn
-    case jumpBackInSyncedTab
     case bookmark
     case merino
     case shortcut
@@ -37,7 +36,6 @@ extension MenuType {
         switch homepageItem {
         case .topSite: self = .topSite
         case .jumpBackIn: self = .jumpBackIn
-        case .jumpBackInSyncedTab: self = .jumpBackInSyncedTab
         case .bookmark: self = .bookmark
         case .merino: self = .merino
         default: return nil

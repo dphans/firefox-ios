@@ -5,7 +5,7 @@
 import BackgroundTasks
 import Common
 import Foundation
-import Storage
+
 
 /// A background utility that downloads and stores new Firefox Suggest
 /// suggestions when the device is online and connected to power.

@@ -5,7 +5,7 @@
 import Foundation
 import Common
 import Shared
-import Storage
+
 
 protocol TopSitesManagerInterface {
     /// Returns a list of top sites state using the top site history manager to fetch the other sites

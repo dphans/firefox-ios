@@ -7,7 +7,7 @@
 import Common
 import Glean
 import Shared
-import Storage
+
 
 protocol TelemetryWrapperProtocol {
     func recordEvent(category: TelemetryWrapper.EventCategory,
@@ -505,7 +505,6 @@ extension TelemetryWrapper {
         case nightModeEnabled = "night-mode-enabled"
         case nightModeDisabled = "night-mode-disabled"
         case logins = "logins-and-passwords"
-        case signIntoSync = "sign-into-sync"
         case syncTab = "sync-tab"
         case syncSignIn = "sync-sign-in"
         case syncSignInUseEmail = "sync-sign-in-use-email"
@@ -1424,8 +1423,6 @@ extension TelemetryWrapper {
             GleanMetrics.AppMenu.siteMenu.add()
         case (.action, .tap, .logins, _, _):
             GleanMetrics.AppMenu.logins.add()
-        case (.action, .tap, .signIntoSync, _, _):
-            GleanMetrics.AppMenu.signIntoSync.add()
         case (.action, .tap, .home, _, _):
             GleanMetrics.AppMenu.home.add()
         case (.action, .tap, .blockImagesEnabled, _, _):
