@@ -8,8 +8,7 @@
 #import "FSReadingList.h"
 
 #import "Extensions/UIImage+ImageEffects.h"
-
-#import "Shared-Bridging-Header.h"
+#import "Extensions/FSUtils.h"
 #import "Client-Bridging-Header.h"
 
 #endif

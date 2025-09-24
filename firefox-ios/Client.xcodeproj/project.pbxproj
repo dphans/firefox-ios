@@ -9,6 +9,85 @@
 /* Begin PBXBuildFile section */
 		033A62002E77FE9900A84E8A /* ResetTermsOfServiceAcceptancePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A61FF2E77FE9900A84E8A /* ResetTermsOfServiceAcceptancePage.swift */; };
 		0A06DA092E83CE86001CC241 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A06DA082E83CE86001CC241 /* UIImage+ImageEffects.m */; };
+		0A06DA0A2E83CFB1001CC241 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BED8EB32D12BFAF004E826B /* Strings.swift */; };
+		0A06DA0B2E83CFB1001CC241 /* DeviceInfo+defaultClientName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BED8EB52D12BFED004E826B /* DeviceInfo+defaultClientName.swift */; };
+		0A06DA0C2E83CFB1001CC241 /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E65075821E37F7AB006961AC /* FSUtils.m */; };
+		0A06DA0D2E83CFB1001CC241 /* Date+relativeTimeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BED8EB72D12BFFD004E826B /* Date+relativeTimeString.swift */; };
+		0A06DA0E2E83CFC6001CC241 /* ErrorPages.strings in Resources */ = {isa = PBXBuildFile; fileRef = 904F48CABE595981535FCCEB /* ErrorPages.strings */; };
+		0A06DA0F2E83CFC6001CC241 /* ClearHistoryConfirm.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4822451299E114F04F3EFAB0 /* ClearHistoryConfirm.strings */; };
+		0A06DA102E83CFC6001CC241 /* ClearPrivateDataConfirm.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0D8481DAC1E6378ABF1565A /* ClearPrivateDataConfirm.strings */; };
+		0A06DA112E83CFC6001CC241 /* 3DTouchActions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 514A4C83AE17612AF3025498 /* 3DTouchActions.strings */; };
+		0A06DA122E83CFC6001CC241 /* AuthenticationManager.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32484895B328A342AED539C8 /* AuthenticationManager.strings */; };
+		0A06DA132E83CFC6001CC241 /* ClearPrivateData.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58E14A8F991610DB13A9F1E1 /* ClearPrivateData.strings */; };
+		0A06DA142E83CFC6001CC241 /* Default Browser.strings in Resources */ = {isa = PBXBuildFile; fileRef = 968645798276FD71A15F01E5 /* Default Browser.strings */; };
+		0A06DA152E83CFC6001CC241 /* FindInPage.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC44428AA48BA072E576E062 /* FindInPage.strings */; };
+		0A06DA162E83CFCD001CC241 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7401461DBA6DB88F82931350 /* Localizable.strings */; };
+		0A06DA172E83CFCD001CC241 /* Search.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA3047F884B6BA22989FD627 /* Search.strings */; };
+		0A06DA182E83CFCD001CC241 /* HistoryPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67AF4B8392ADBAA41F1B3AD0 /* HistoryPanel.strings */; };
+		0A06DA192E83CFCD001CC241 /* Intro.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99C54F4F8354A39A0F06511F /* Intro.strings */; };
+		0A06DA1A2E83CFCD001CC241 /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 064741F8AE308A64808E6265 /* Shared.strings */; };
+		0A06DA1B2E83CFCD001CC241 /* LoginManager.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99C94644BBAAC6B90043899F /* LoginManager.strings */; };
+		0A06DA1C2E83CFCD001CC241 /* Storage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9403451493EE3ADAAEFA2EB1 /* Storage.strings */; };
+		0A06DA1D2E83CFCD001CC241 /* PrivateBrowsing.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DFA42FBB7C25AC38ACEEA0D /* PrivateBrowsing.strings */; };
+		0A06DA1E2E83CFCD001CC241 /* Menu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05014FF0A3822CA5C103E9C9 /* Menu.strings */; };
+		0A06DA1F2E83CFE0001CC241 /* SuggestedSites.strings in Resources */ = {isa = PBXBuildFile; fileRef = 434707672C85D3DA009585F0 /* SuggestedSites.strings */; };
+		0A06DA202E83CFE0001CC241 /* Bookmarks.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43079D1D2C85D3BB0047C28D /* Bookmarks.strings */; };
+		0A06DA212E83CFE0001CC241 /* ScanQRCode.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B627742C3C001E00A188E8 /* ScanQRCode.strings */; };
+		0A06DA222E83CFE0001CC241 /* SearchHeaderTitle.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43DF9458292258C300590FE3 /* SearchHeaderTitle.strings */; };
+		0A06DA232E83CFE0001CC241 /* Notification.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439A220D29F69A0C00F120EE /* Notification.strings */; };
+		0A06DA242E83CFE0001CC241 /* SearchEngineSelection.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436033C72CCFA811000BBEA2 /* SearchEngineSelection.strings */; };
+		0A06DA252E83CFE0001CC241 /* BiometricAuthentication.strings in Resources */ = {isa = PBXBuildFile; fileRef = 433BAD9E29C8769800E34991 /* BiometricAuthentication.strings */; };
+		0A06DA262E83CFE0001CC241 /* NativeErrorPage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 437AE30E2C7C9A0C0053F7F3 /* NativeErrorPage.strings */; };
+		0A06DA272E83CFE0001CC241 /* SelectCreditCard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4308A4E42A52E38C001D652E /* SelectCreditCard.strings */; };
+		0A06DA282E83CFE0001CC241 /* SocialMediaApp.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4369D46D2CF4935C0059C50F /* SocialMediaApp.strings */; };
+		0A06DA292E83CFE0001CC241 /* ZoomPageBar.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439A221029F69A0C00F120EE /* ZoomPageBar.strings */; };
+		0A06DA2A2E83CFE0001CC241 /* LoginsHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B2963B2B305F1E00A5AA9B /* LoginsHelper.strings */; };
+		0A06DA2B2E83CFE0001CC241 /* UpdateCard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43A715412A2DF94F00DD5747 /* UpdateCard.strings */; };
+		0A06DA2C2E83CFE0001CC241 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43079D212C85D3BB0047C28D /* MainMenu.strings */; };
+		0A06DA2D2E83CFE0001CC241 /* Today.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21374EEAA2C69079F77A0AC3 /* Today.strings */; };
+		0A06DA2E2E83CFE0001CC241 /* FirefoxLogins.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B296382B305F1E00A5AA9B /* FirefoxLogins.strings */; };
+		0A06DA2F2E83CFE0001CC241 /* TabLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 431F0C482AC1A112006D7D49 /* TabLocation.strings */; };
+		0A06DA302E83CFE0001CC241 /* Onboarding.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43937C2129BA686000074633 /* Onboarding.strings */; };
+		0A06DA312E83CFE0001CC241 /* BottomSheet.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436E0E132BA857AB00D01C1A /* BottomSheet.strings */; };
+		0A06DA322E83CFE0001CC241 /* SnackBar.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FA49A129C875C0005062DB /* SnackBar.strings */; };
+		0A06DA332E83CFE0001CC241 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FA499E29C875C0005062DB /* Settings.strings */; };
+		0A06DA342E83CFE0001CC241 /* DisplayCard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43DC75A52A24BE73007C2BCE /* DisplayCard.strings */; };
+		0A06DA352E83CFE0001CC241 /* FxANotification.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436033C42CCFA811000BBEA2 /* FxANotification.strings */; };
+		0A06DA362E83CFE0001CC241 /* BookmarkPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = D58A202725C9D96400105D25 /* BookmarkPanel.strings */; };
+		0A06DA372E83CFE0001CC241 /* ErrorState.strings in Resources */ = {isa = PBXBuildFile; fileRef = 433BADA229C8769800E34991 /* ErrorState.strings */; };
+		0A06DA382E83CFE0001CC241 /* PasswordAutofill.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43A878152B838FF90039D6B7 /* PasswordAutofill.strings */; };
+		0A06DA392E83CFE0001CC241 /* Credentials.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B296352B305F1E00A5AA9B /* Credentials.strings */; };
+		0A06DA3A2E83CFE0001CC241 /* EngagementNotification.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43937C1E29BA686000074633 /* EngagementNotification.strings */; };
+		0A06DA3B2E83CFE0001CC241 /* Toolbar.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43E6BE142C57AF7600C2152C /* Toolbar.strings */; };
+		0A06DA3C2E83CFE0001CC241 /* PasswordGenerator.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43E168912CA183A400E67516 /* PasswordGenerator.strings */; };
+		0A06DA3D2E83CFE0001CC241 /* Microsurvey.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B966AD2BE8F11D007448EA /* Microsurvey.strings */; };
+		0A06DA3E2E83CFE0001CC241 /* QRCode.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43903A902C20502A00ACF76E /* QRCode.strings */; };
+		0A06DA3F2E83CFE0001CC241 /* Alert.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FA499829C875C0005062DB /* Alert.strings */; };
+		0A06DA402E83CFE0001CC241 /* Footer.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43A7153B2A2DF94F00DD5747 /* Footer.strings */; };
+		0A06DA412E83CFE0001CC241 /* FirefoxHomepage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4369B87F2B0B75A8003791B9 /* FirefoxHomepage.strings */; };
+		0A06DA422E83CFE0001CC241 /* AddressToolbar.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43903A8A2C20502A00ACF76E /* AddressToolbar.strings */; };
+		0A06DA432E83CFE0001CC241 /* FirefoxSync.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43C50B4E2A0BCAA800C6A134 /* FirefoxSync.strings */; };
+		0A06DA442E83CFE0001CC241 /* Share.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43D75D182AC1A16900D1DE87 /* Share.strings */; };
+		0A06DA452E83CFE0001CC241 /* JumpBackIn.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43470D0628B39AF80034F500 /* JumpBackIn.strings */; };
+		0A06DA462E83CFE0001CC241 /* EnhancedTrackingProtection.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43903A8D2C20502A00ACF76E /* EnhancedTrackingProtection.strings */; };
+		0A06DA472E83CFE0001CC241 /* ContextualHints.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B2962F2B305F1E00A5AA9B /* ContextualHints.strings */; };
+		0A06DA482E83CFE0001CC241 /* SocialShare.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4369D4702CF4935C0059C50F /* SocialShare.strings */; };
+		0A06DA492E83CFE0001CC241 /* Alerts.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4378C732293E09C200D0C1C7 /* Alerts.strings */; };
+		0A06DA4A2E83CFE0001CC241 /* TabsTray.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4378C735293E09C200D0C1C7 /* TabsTray.strings */; };
+		0A06DA4B2E83CFE0001CC241 /* KeyboardAccessory.strings in Resources */ = {isa = PBXBuildFile; fileRef = 432C01562B83900600392A88 /* KeyboardAccessory.strings */; };
+		0A06DA4C2E83CFE0001CC241 /* EditAddress.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43D3ED962C3BFFC900E33D46 /* EditAddress.strings */; };
+		0A06DA4D2E83CFE0001CC241 /* EditCard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FA499B29C875C0005062DB /* EditCard.strings */; };
+		0A06DA4E2E83CFE0001CC241 /* ActivityStream.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43903A872C20502A00ACF76E /* ActivityStream.strings */; };
+		0A06DA4F2E83CFE0001CC241 /* CustomizeFirefoxHome.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43F118FE2A52E42400C44C6C /* CustomizeFirefoxHome.strings */; };
+		0A06DA502E83CFE0001CC241 /* Upgrade.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43C50B512A0BCAA800C6A134 /* Upgrade.strings */; };
+		0A06DA512E83CFE0001CC241 /* ResearchSurface.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43937C2429BA686000074633 /* ResearchSurface.strings */; };
+		0A06DA522E83CFE0001CC241 /* TabToolbar.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B520E22B55493E00007187 /* TabToolbar.strings */; };
+		0A06DA532E83CFE0001CC241 /* BookmarkPanelDeleteConfirm.strings in Resources */ = {isa = PBXBuildFile; fileRef = D58A202D25C9D96400105D25 /* BookmarkPanelDeleteConfirm.strings */; };
+		0A06DA542E83CFE0001CC241 /* Edit Card.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43737CB129E4259700847A6F /* Edit Card.strings */; };
+		0A06DA552E83CFE0001CC241 /* LibraryPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 435E3B1D2CE21D1F00274AB9 /* LibraryPanel.strings */; };
+		0A06DA562E83CFE0001CC241 /* CredentialProvider.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B296322B305F1E00A5AA9B /* CredentialProvider.strings */; };
+		0A06DA572E83CFE0001CC241 /* ToolbarLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43470D0928B39AF80034F500 /* ToolbarLocation.strings */; };
+		0A06DA582E83CFE0001CC241 /* RememberCard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43A7153E2A2DF94F00DD5747 /* RememberCard.strings */; };
 		0A3F57F92CEDD4CA0051B001 /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F57F82CEDD4CA0051B001 /* TermsOfServiceViewController.swift */; };
 		0A44ABAC2D6DC2520034FA86 /* ThemedLearnMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44ABAB2D6DC2410034FA86 /* ThemedLearnMoreTableViewCell.swift */; };
 		0A49784A2C53E63200B1E82A /* TrackingProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4978492C53E63200B1E82A /* TrackingProtectionViewController.swift */; };
@@ -124,18 +203,11 @@
 		0BBFBF252DFC203100160911 /* BrowserWebUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFBF242DFC203100160911 /* BrowserWebUIDelegate.swift */; };
 		0BC57FE92D48E9CF0049C2B9 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC57FE82D48E9CF0049C2B9 /* Metrics.swift */; };
 		0BD049CE2DFC4AAE00614E61 /* PopupHTMLSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD049CD2DFC4A9C00614E61 /* PopupHTMLSetting.swift */; };
-		0BD4FAD52CFF199700E0FBF4 /* Common in Frameworks */ = {isa = PBXBuildFile; productRef = 5A9FF8482942454600DF9FBB /* Common */; };
-		0BD4FAD62CFF199700E0FBF4 /* GCDWebServers in Frameworks */ = {isa = PBXBuildFile; productRef = 8A8881592B20FFE0009635AE /* GCDWebServers */; };
-		0BD4FAD72CFF199700E0FBF4 /* WebEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 8A88815B2B2103AD009635AE /* WebEngine */; };
 		0BDDB33D2CA6B1DA00D501DF /* EditFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDDB33C2CA6B1DA00D501DF /* EditFolderViewController.swift */; };
 		0BDDB33F2CA6B1F000D501DF /* EditFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDDB33E2CA6B1F000D501DF /* EditFolderViewModel.swift */; };
 		0BDDB3412CA6B23300D501DF /* EditFolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDDB3402CA6B23300D501DF /* EditFolderCell.swift */; };
 		0BDDB3442CA6E43100D501DF /* FolderHierarchyFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDDB3432CA6E43100D501DF /* FolderHierarchyFetcher.swift */; };
 		0BDDB3462CA6E43A00D501DF /* BookmarksSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDDB3452CA6E43A00D501DF /* BookmarksSaver.swift */; };
-		0BED8EB42D12BFB0004E826B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BED8EB32D12BFAF004E826B /* Strings.swift */; };
-		0BED8EB62D12BFED004E826B /* DeviceInfo+defaultClientName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BED8EB52D12BFED004E826B /* DeviceInfo+defaultClientName.swift */; };
-		0BED8EB82D12BFFD004E826B /* Date+relativeTimeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BED8EB72D12BFFD004E826B /* Date+relativeTimeString.swift */; };
-		0BED8EBA2D12C055004E826B /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 0BED8EB92D12C055004E826B /* Shared */; };
 		0BF0DB941A8545800039F300 /* URLBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0DB931A8545800039F300 /* URLBarView.swift */; };
 		0BF1B7E31AC60DEA00A7B407 /* InsetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1B7E21AC60DEA00A7B407 /* InsetButton.swift */; };
 		0BF7FE422E09620900FD016A /* swipingTabsOn.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BF7FE412E09620900FD016A /* swipingTabsOn.json */; };
@@ -309,73 +381,29 @@
 		3BCE6D3C1CEB9E4D0080928C /* ThirdPartySearchAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCE6D3B1CEB9E4D0080928C /* ThirdPartySearchAlerts.swift */; };
 		3BF56D271CDBBE1F00AC4D75 /* SimpleToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF56D261CDBBE1F00AC4D75 /* SimpleToast.swift */; };
 		43017ECB278E0C6700CED011 /* RustMozillaAppServices.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE578A278BA4D900491291 /* RustMozillaAppServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		43079D1F2C85D3BB0047C28D /* Bookmarks.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43079D1D2C85D3BB0047C28D /* Bookmarks.strings */; };
-		43079D232C85D3BB0047C28D /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43079D212C85D3BB0047C28D /* MainMenu.strings */; };
-		4308A4E62A52E38C001D652E /* SelectCreditCard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4308A4E42A52E38C001D652E /* SelectCreditCard.strings */; };
 		43162A2F2492DB7800F91658 /* EmptyPrivateTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43162A2E2492DB7800F91658 /* EmptyPrivateTabsView.swift */; };
 		43175DB626B8774D00C41C31 /* Ads.js in Resources */ = {isa = PBXBuildFile; fileRef = 43175DB526B8774D00C41C31 /* Ads.js */; };
 		43175DB826B87D2C00C41C31 /* AdsTelemetryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43175DB726B87D2C00C41C31 /* AdsTelemetryHelper.swift */; };
 		431C0CA925C890E500395CE4 /* DefaultBrowserOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C0CA825C890E500395CE4 /* DefaultBrowserOnboardingViewModel.swift */; };
-		431F0C4A2AC1A112006D7D49 /* TabLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 431F0C482AC1A112006D7D49 /* TabLocation.strings */; };
 		432BD0242790EBD000A0F3C3 /* Adjust in Frameworks */ = {isa = PBXBuildFile; productRef = 432BD0232790EBD000A0F3C3 /* Adjust */; };
-		432C01582B83900600392A88 /* KeyboardAccessory.strings in Resources */ = {isa = PBXBuildFile; fileRef = 432C01562B83900600392A88 /* KeyboardAccessory.strings */; };
 		4331A9BB27193DF0005E8080 /* ContextualHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4331A9BA27193DEF005E8080 /* ContextualHintViewController.swift */; };
 		4331A9BD271D267E005E8080 /* ContextualHintViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4331A9BC271D267E005E8080 /* ContextualHintViewProvider.swift */; };
 		4336FAD2264B169000A6B076 /* WebcompatAllFramesAtDocumentStart.js in Resources */ = {isa = PBXBuildFile; fileRef = 4336FAD1264B169000A6B076 /* WebcompatAllFramesAtDocumentStart.js */; };
-		433BADA029C8769800E34991 /* BiometricAuthentication.strings in Resources */ = {isa = PBXBuildFile; fileRef = 433BAD9E29C8769800E34991 /* BiometricAuthentication.strings */; };
-		433BADA429C8769800E34991 /* ErrorState.strings in Resources */ = {isa = PBXBuildFile; fileRef = 433BADA229C8769800E34991 /* ErrorState.strings */; };
 		433F87CE2788EAB600693368 /* GCDWebServers in Frameworks */ = {isa = PBXBuildFile; productRef = 433F87CD2788EAB600693368 /* GCDWebServers */; };
 		4346FF08295BA6A300F4D220 /* CreditCardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4346FF07295BA6A200F4D220 /* CreditCardSettingsViewController.swift */; };
-		434707692C85D3DA009585F0 /* SuggestedSites.strings in Resources */ = {isa = PBXBuildFile; fileRef = 434707672C85D3DA009585F0 /* SuggestedSites.strings */; };
-		43470D0828B39AF80034F500 /* JumpBackIn.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43470D0628B39AF80034F500 /* JumpBackIn.strings */; };
-		43470D0B28B39AF80034F500 /* ToolbarLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43470D0928B39AF80034F500 /* ToolbarLocation.strings */; };
 		4347B398298D6D7B0045F677 /* CreditCardTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4347B397298D6D7B0045F677 /* CreditCardTableViewModel.swift */; };
 		4347B39A298DA5BB0045F677 /* CreditCardInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4347B399298DA5BB0045F677 /* CreditCardInputViewModel.swift */; };
 		434E733725EED32E006D3BDE /* BrowserViewController+URLBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E733625EED32E006D3BDE /* BrowserViewController+URLBarDelegate.swift */; };
 		435C85F02788F4D00072B526 /* Glean in Frameworks */ = {isa = PBXBuildFile; productRef = 435C85EF2788F4D00072B526 /* Glean */; };
 		435D660523D794B90046EFA2 /* UpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D660423D794B90046EFA2 /* UpdateViewModel.swift */; };
 		435D7CC5246209AA0043ACB9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D7CC4246209AA0043ACB9 /* IntroViewController.swift */; };
-		435E3B1F2CE21D1F00274AB9 /* LibraryPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 435E3B1D2CE21D1F00274AB9 /* LibraryPanel.strings */; };
-		436033C62CCFA811000BBEA2 /* FxANotification.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436033C42CCFA811000BBEA2 /* FxANotification.strings */; };
-		436033C92CCFA811000BBEA2 /* SearchEngineSelection.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436033C72CCFA811000BBEA2 /* SearchEngineSelection.strings */; };
-		4369B8812B0B75A8003791B9 /* FirefoxHomepage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4369B87F2B0B75A8003791B9 /* FirefoxHomepage.strings */; };
-		4369D46F2CF4935C0059C50F /* SocialMediaApp.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4369D46D2CF4935C0059C50F /* SocialMediaApp.strings */; };
-		4369D4722CF4935C0059C50F /* SocialShare.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4369D4702CF4935C0059C50F /* SocialShare.strings */; };
-		436E0E152BA857AB00D01C1A /* BottomSheet.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436E0E132BA857AB00D01C1A /* BottomSheet.strings */; };
-		43737CB329E4259700847A6F /* Edit Card.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43737CB129E4259700847A6F /* Edit Card.strings */; };
-		4378C734293E09C200D0C1C7 /* Alerts.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4378C732293E09C200D0C1C7 /* Alerts.strings */; };
-		4378C737293E09C200D0C1C7 /* TabsTray.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4378C735293E09C200D0C1C7 /* TabsTray.strings */; };
-		437AE3102C7C9A0C0053F7F3 /* NativeErrorPage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 437AE30E2C7C9A0C0053F7F3 /* NativeErrorPage.strings */; };
 		438FE8642988ABA600155B10 /* CreditCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FE8632988ABA600155B10 /* CreditCardTableViewController.swift */; };
-		43903A892C20502A00ACF76E /* ActivityStream.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43903A872C20502A00ACF76E /* ActivityStream.strings */; };
-		43903A8C2C20502A00ACF76E /* AddressToolbar.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43903A8A2C20502A00ACF76E /* AddressToolbar.strings */; };
-		43903A8F2C20502A00ACF76E /* EnhancedTrackingProtection.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43903A8D2C20502A00ACF76E /* EnhancedTrackingProtection.strings */; };
-		43903A922C20502A00ACF76E /* QRCode.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43903A902C20502A00ACF76E /* QRCode.strings */; };
-		43937C2029BA686000074633 /* EngagementNotification.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43937C1E29BA686000074633 /* EngagementNotification.strings */; };
-		43937C2329BA686000074633 /* Onboarding.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43937C2129BA686000074633 /* Onboarding.strings */; };
-		43937C2629BA686000074633 /* ResearchSurface.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43937C2429BA686000074633 /* ResearchSurface.strings */; };
 		4393932029AC6CE900DC5A85 /* EnvironmentValues+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4393931F29AC6CE900DC5A85 /* EnvironmentValues+Extension.swift */; };
-		439A220F29F69A0C00F120EE /* Notification.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439A220D29F69A0C00F120EE /* Notification.strings */; };
-		439A221229F69A0C00F120EE /* ZoomPageBar.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439A221029F69A0C00F120EE /* ZoomPageBar.strings */; };
 		439C489C29760575007C3DCD /* CreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439C489B29760575007C3DCD /* CreditCardValidator.swift */; };
 		43A5643823CD1E1C00B6857D /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5643523CD1E1B00B6857D /* UpdateViewController.swift */; };
-		43A7153D2A2DF94F00DD5747 /* Footer.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43A7153B2A2DF94F00DD5747 /* Footer.strings */; };
-		43A715402A2DF94F00DD5747 /* RememberCard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43A7153E2A2DF94F00DD5747 /* RememberCard.strings */; };
-		43A715432A2DF94F00DD5747 /* UpdateCard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43A715412A2DF94F00DD5747 /* UpdateCard.strings */; };
-		43A878172B838FF90039D6B7 /* PasswordAutofill.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43A878152B838FF90039D6B7 /* PasswordAutofill.strings */; };
 		43AB6FA225DC53D30016B015 /* GoogleTopSiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AB6F9C25DC53D20016B015 /* GoogleTopSiteManager.swift */; };
 		43AB6FA425DC53D30016B015 /* LegacyLabelButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AB6F9E25DC53D20016B015 /* LegacyLabelButtonHeaderView.swift */; };
-		43B296312B305F1E00A5AA9B /* ContextualHints.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B2962F2B305F1E00A5AA9B /* ContextualHints.strings */; };
-		43B296342B305F1E00A5AA9B /* CredentialProvider.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B296322B305F1E00A5AA9B /* CredentialProvider.strings */; };
-		43B296372B305F1E00A5AA9B /* Credentials.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B296352B305F1E00A5AA9B /* Credentials.strings */; };
-		43B2963A2B305F1E00A5AA9B /* FirefoxLogins.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B296382B305F1E00A5AA9B /* FirefoxLogins.strings */; };
-		43B2963D2B305F1E00A5AA9B /* LoginsHelper.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B2963B2B305F1E00A5AA9B /* LoginsHelper.strings */; };
-		43B520E42B55493E00007187 /* TabToolbar.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B520E22B55493E00007187 /* TabToolbar.strings */; };
-		43B627762C3C001E00A188E8 /* ScanQRCode.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B627742C3C001E00A188E8 /* ScanQRCode.strings */; };
-		43B966AF2BE8F11D007448EA /* Microsurvey.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43B966AD2BE8F11D007448EA /* Microsurvey.strings */; };
 		43BE580E278BABCF00491291 /* RustMozillaAppServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE578A278BA4D900491291 /* RustMozillaAppServices.framework */; };
-		43C50B502A0BCAA800C6A134 /* FirefoxSync.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43C50B4E2A0BCAA800C6A134 /* FirefoxSync.strings */; };
-		43C50B532A0BCAA800C6A134 /* Upgrade.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43C50B512A0BCAA800C6A134 /* Upgrade.strings */; };
 		43D00493296FC48F00CB0F31 /* CreditCardSettingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D00492296FC48F00CB0F31 /* CreditCardSettingsEmptyView.swift */; };
 		43D16B7A29831C7F009F8279 /* CreditCardAutofillToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D16B7929831C7F009F8279 /* CreditCardAutofillToggle.swift */; };
 		43D16B7C29831CD0009F8279 /* CreditCardItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D16B7B29831CD0009F8279 /* CreditCardItemRow.swift */; };
@@ -383,20 +411,9 @@
 		43D16B8229831E6A009F8279 /* CreditCardInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D16B8129831E6A009F8279 /* CreditCardInputField.swift */; };
 		43D16B8529831EA5009F8279 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D16B8429831EA5009F8279 /* Style.swift */; };
 		43D16B8729831EEF009F8279 /* RemoveCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D16B8629831EEF009F8279 /* RemoveCardButton.swift */; };
-		43D3ED982C3BFFC900E33D46 /* EditAddress.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43D3ED962C3BFFC900E33D46 /* EditAddress.strings */; };
 		43D4BCBA2972082400775FB5 /* CreditCardSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4BCB92972082400775FB5 /* CreditCardSettingsViewModel.swift */; };
-		43D75D1A2AC1A16900D1DE87 /* Share.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43D75D182AC1A16900D1DE87 /* Share.strings */; };
-		43DC75A72A24BE73007C2BCE /* DisplayCard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43DC75A52A24BE73007C2BCE /* DisplayCard.strings */; };
-		43DF945A292258C300590FE3 /* SearchHeaderTitle.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43DF9458292258C300590FE3 /* SearchHeaderTitle.strings */; };
-		43E168932CA183A400E67516 /* PasswordGenerator.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43E168912CA183A400E67516 /* PasswordGenerator.strings */; };
-		43E6BE162C57AF7600C2152C /* Toolbar.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43E6BE142C57AF7600C2152C /* Toolbar.strings */; };
-		43F119002A52E42400C44C6C /* CustomizeFirefoxHome.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43F118FE2A52E42400C44C6C /* CustomizeFirefoxHome.strings */; };
 		43F7952525795F69005AEE40 /* SearchTelemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7952425795F69005AEE40 /* SearchTelemetry.swift */; };
 		43F92B3829E9F52B000C0F17 /* AutofillAllFramesAtDocumentStart.js in Resources */ = {isa = PBXBuildFile; fileRef = 43F92B3729E9F52B000C0F17 /* AutofillAllFramesAtDocumentStart.js */; };
-		43FA499A29C875C0005062DB /* Alert.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FA499829C875C0005062DB /* Alert.strings */; };
-		43FA499D29C875C0005062DB /* EditCard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FA499B29C875C0005062DB /* EditCard.strings */; };
-		43FA49A029C875C0005062DB /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FA499E29C875C0005062DB /* Settings.strings */; };
-		43FA49A329C875C0005062DB /* SnackBar.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FA49A129C875C0005062DB /* SnackBar.strings */; };
 		45D5EDA729269F7500311934 /* DataObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D5EDA629269F7500311934 /* DataObserver.swift */; };
 		59A68B280D62462B85CF57A4 /* HistoryPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A6825233896FC846499289 /* HistoryPanel.swift */; };
 		59A68D66379CFA85C4EAF00B /* TwoLineImageOverlayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A68B1F857A8638598A63A0 /* TwoLineImageOverlayCell.swift */; };
@@ -978,8 +995,6 @@
 		C869912E28917688007ACC5C /* WallpaperDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C869912A28917688007ACC5C /* WallpaperDataService.swift */; };
 		C869912F28917688007ACC5C /* WallpaperMetadataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C869912B28917688007ACC5C /* WallpaperMetadataLoader.swift */; };
 		C8699131289176A5007ACC5C /* WallpaperNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8699130289176A5007ACC5C /* WallpaperNetworking.swift */; };
-		C877037A25222F30006E38EB /* Localizations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288A2D861AB8B3260023ABC3 /* Localizations.framework */; };
-		C87703D225223EA5006E38EB /* Localizations.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 288A2D861AB8B3260023ABC3 /* Localizations.framework */; };
 		C87A121A28C2451A0097ED51 /* WallpaperMigrationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A121928C2451A0097ED51 /* WallpaperMigrationUtility.swift */; };
 		C87D8B802818333F00A6307D /* NimbusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87D8B7F2818333F00A6307D /* NimbusManager.swift */; };
 		C87DF9DB267247190097E707 /* UIConstants+BottomInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87DF9DA267247190097E707 /* UIConstants+BottomInset.swift */; };
@@ -1070,26 +1085,6 @@
 		D3FEC38D1AC4B42F00494F45 /* AutocompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC38C1AC4B42F00494F45 /* AutocompleteTextField.swift */; };
 		D51EA5BA26406A0000334331 /* ExperimentsBranchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EA5B926406A0000334331 /* ExperimentsBranchesViewController.swift */; };
 		D51EA5CF26406D8300334331 /* ExperimentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EA5CE26406D8300334331 /* ExperimentsViewController.swift */; };
-		D58A202925C9D96400105D25 /* BookmarkPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = D58A202725C9D96400105D25 /* BookmarkPanel.strings */; };
-		D58A202F25C9D96400105D25 /* BookmarkPanelDeleteConfirm.strings in Resources */ = {isa = PBXBuildFile; fileRef = D58A202D25C9D96400105D25 /* BookmarkPanelDeleteConfirm.strings */; };
-		D59643E325C9B8E000EAB8B9 /* ClearPrivateData.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58E14A8F991610DB13A9F1E1 /* ClearPrivateData.strings */; };
-		D59643E425C9B8E000EAB8B9 /* 3DTouchActions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 514A4C83AE17612AF3025498 /* 3DTouchActions.strings */; };
-		D59643E525C9B8E000EAB8B9 /* AuthenticationManager.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32484895B328A342AED539C8 /* AuthenticationManager.strings */; };
-		D59643E625C9B8E000EAB8B9 /* LoginManager.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99C94644BBAAC6B90043899F /* LoginManager.strings */; };
-		D59643E725C9B8E000EAB8B9 /* Intro.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99C54F4F8354A39A0F06511F /* Intro.strings */; };
-		D59643E825C9B8E000EAB8B9 /* Default Browser.strings in Resources */ = {isa = PBXBuildFile; fileRef = 968645798276FD71A15F01E5 /* Default Browser.strings */; };
-		D59643E925C9B8E000EAB8B9 /* Menu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05014FF0A3822CA5C103E9C9 /* Menu.strings */; };
-		D59643EA25C9B8E000EAB8B9 /* HistoryPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67AF4B8392ADBAA41F1B3AD0 /* HistoryPanel.strings */; };
-		D59643EB25C9B8E000EAB8B9 /* ClearHistoryConfirm.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4822451299E114F04F3EFAB0 /* ClearHistoryConfirm.strings */; };
-		D59643EC25C9B8E000EAB8B9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7401461DBA6DB88F82931350 /* Localizable.strings */; };
-		D59643ED25C9B8E000EAB8B9 /* FindInPage.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC44428AA48BA072E576E062 /* FindInPage.strings */; };
-		D59643EE25C9B8E000EAB8B9 /* Search.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA3047F884B6BA22989FD627 /* Search.strings */; };
-		D59643EF25C9B8E000EAB8B9 /* PrivateBrowsing.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DFA42FBB7C25AC38ACEEA0D /* PrivateBrowsing.strings */; };
-		D59643F025C9B8E000EAB8B9 /* ClearPrivateDataConfirm.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0D8481DAC1E6378ABF1565A /* ClearPrivateDataConfirm.strings */; };
-		D59643F125C9B8E000EAB8B9 /* ErrorPages.strings in Resources */ = {isa = PBXBuildFile; fileRef = 904F48CABE595981535FCCEB /* ErrorPages.strings */; };
-		D59643F225C9B8E000EAB8B9 /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 064741F8AE308A64808E6265 /* Shared.strings */; };
-		D59643F325C9B8E000EAB8B9 /* Storage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9403451493EE3ADAAEFA2EB1 /* Storage.strings */; };
-		D59643F425C9B8E000EAB8B9 /* Today.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21374EEAA2C69079F77A0AC3 /* Today.strings */; };
 		D5D052D92645ABF400759F85 /* ExperimentsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D052D82645ABF400759F85 /* ExperimentsSettingsView.swift */; };
 		D5D0532E2645B3A700759F85 /* ExperimentsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D0532D2645B3A700759F85 /* ExperimentsTableView.swift */; };
 		D5D237782640BBA600326204 /* ExperimentsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D237772640BBA600326204 /* ExperimentsSettingsViewController.swift */; };
@@ -1194,7 +1189,6 @@
 		E63ED7D81BFCD9990097D08E /* LoginDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ED7D71BFCD9990097D08E /* LoginDetailTableViewCell.swift */; };
 		E63ED8E11BFD25580097D08E /* PasswordManagerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63ED8E01BFD25580097D08E /* PasswordManagerListViewController.swift */; };
 		E650755C1E37F747006961AC /* Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E650755B1E37F747006961AC /* Swizzling.m */; };
-		E65075B11E37F7AB006961AC /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E65075821E37F7AB006961AC /* FSUtils.m */; };
 		E653422D1C5944F90039DD9E /* BrowserPrompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653422C1C5944F90039DD9E /* BrowserPrompts.swift */; };
 		E660BDD91BB06521009AC090 /* TabsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660BDD81BB06521009AC090 /* TabsButton.swift */; };
 		E663D5781BB341C4001EF30E /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E663D5771BB341C4001EF30E /* ToggleButton.swift */; };
@@ -1282,27 +1276,7 @@
 		FA9293D41D6580E100AC8D33 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9293D31D6580E100AC8D33 /* QRCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0AE3C2DD2E834C1C0022778C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F84B21B61A090F8100AAB793 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 288A2D851AB8B3260023ABC3;
-			remoteInfo = Localizations;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		4368F838279665E00013419B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E6B09CD31C74EEDB00C63FA1 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1310,7 +1284,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				43017ECB278E0C6700CED011 /* RustMozillaAppServices.framework in Copy Frameworks */,
-				C87703D225223EA5006E38EB /* Localizations.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1549,7 +1522,6 @@
 		28302E3F1AF0747800521E2E /* DatabaseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
 		285D3B671B4380B70035FD22 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Queue.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		285D3B8F1B4386520035FD22 /* SQLiteQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteQueue.swift; sourceTree = "<group>"; };
-		288A2D861AB8B3260023ABC3 /* Localizations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localizations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C4AB711AD42D4300D9ACE3 /* Clients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clients.swift; sourceTree = "<group>"; };
 		2F44FC711A9E840300FD20CC /* SettingsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsNavigationController.swift; sourceTree = "<group>"; };
 		2F44FCC41A9E85E900FD20CC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -2511,8 +2483,6 @@
 		E4CD9F5A1A71506C00318571 /* Reader.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Reader.css; sourceTree = "<group>"; };
 		E4CD9F6C1A77DD2800318571 /* ReaderModeStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderModeStyleViewController.swift; sourceTree = "<group>"; };
 		E4D6BEB81A0930EC00F538BD /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		E4E0BB151AFBC9E4008D6260 /* Shared-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Shared-Bridging-Header.h"; path = "../Shared-Bridging-Header.h"; sourceTree = "<group>"; };
-		E4E0BB171AFBC9E4008D6260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E58368A9287D632F0087A449 /* StoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryProvider.swift; sourceTree = "<group>"; };
 		E60961861B62B8A700DD640F /* Fennec.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Fennec.xcconfig; path = Configuration/Fennec.xcconfig; sourceTree = "<group>"; };
 		E60961891B62B8C800DD640F /* Firefox.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Firefox.xcconfig; path = Configuration/Firefox.xcconfig; sourceTree = "<group>"; };
@@ -2632,17 +2602,6 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		288A2D821AB8B3260023ABC3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0BD4FAD72CFF199700E0FBF4 /* WebEngine in Frameworks */,
-				0BED8EBA2D12C055004E826B /* Shared in Frameworks */,
-				0BD4FAD62CFF199700E0FBF4 /* GCDWebServers in Frameworks */,
-				0BD4FAD52CFF199700E0FBF4 /* Common in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		28CE83DE1A1D1E7C00576538 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2659,7 +2618,6 @@
 				8AF2D0FC2A5F272A00C7DD69 /* ComponentLibrary in Frameworks */,
 				0AE3C2C82E8346FA0022778C /* SummarizeKit in Frameworks */,
 				5A871490292EA3910039A5BD /* SiteImageView in Frameworks */,
-				C877037A25222F30006E38EB /* Localizations.framework in Frameworks */,
 				0AE3C2D02E8346FA0022778C /* WebEngine in Frameworks */,
 				C8E18F20222EDED000E30E52 /* SafariServices.framework in Frameworks */,
 				C8E18F1E222EDE4500E30E52 /* Accelerate.framework in Frameworks */,
@@ -3173,6 +3131,8 @@
 				1BE7A4912C636AEA00460798 /* URLSessionConfiguration+defaultMPTCP.swift */,
 				ED07C0E52CCACD7E006C0627 /* Locale+possibilitiesForLanguageIdentifier.swift */,
 				0A686B3D2CE253AB0090E146 /* PDFDocument+Extension.swift */,
+				E65075811E37F7AB006961AC /* FSUtils.h */,
+				E65075821E37F7AB006961AC /* FSUtils.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -5381,8 +5341,6 @@
 				968645798276FD71A15F01E5 /* Default Browser.strings */,
 				904F48CABE595981535FCCEB /* ErrorPages.strings */,
 				AC44428AA48BA072E576E062 /* FindInPage.strings */,
-				E65075811E37F7AB006961AC /* FSUtils.h */,
-				E65075821E37F7AB006961AC /* FSUtils.m */,
 				67AF4B8392ADBAA41F1B3AD0 /* HistoryPanel.strings */,
 				99C54F4F8354A39A0F06511F /* Intro.strings */,
 				7401461DBA6DB88F82931350 /* Localizable.strings */,
@@ -5419,7 +5377,6 @@
 				43B296382B305F1E00A5AA9B /* FirefoxLogins.strings */,
 				43C50B4E2A0BCAA800C6A134 /* FirefoxSync.strings */,
 				43A7153B2A2DF94F00DD5747 /* Footer.strings */,
-				E4E0BB171AFBC9E4008D6260 /* Info.plist */,
 				4369D4702CF4935C0059C50F /* SocialShare.strings */,
 				4369D46D2CF4935C0059C50F /* SocialMediaApp.strings */,
 				435E3B1D2CE21D1F00274AB9 /* LibraryPanel.strings */,
@@ -5451,7 +5408,6 @@
 				4308A4E42A52E38C001D652E /* SelectCreditCard.strings */,
 				43FA499E29C875C0005062DB /* Settings.strings */,
 				43D75D182AC1A16900D1DE87 /* Share.strings */,
-				E4E0BB151AFBC9E4008D6260 /* Shared-Bridging-Header.h */,
 				43FA49A129C875C0005062DB /* SnackBar.strings */,
 				431F0C482AC1A112006D7D49 /* TabLocation.strings */,
 				4378C735293E09C200D0C1C7 /* TabsTray.strings */,
@@ -5724,7 +5680,6 @@
 			isa = PBXGroup;
 			children = (
 				F84B21BE1A090F8100AAB793 /* Client.app */,
-				288A2D861AB8B3260023ABC3 /* Localizations.framework */,
 				43BE578A278BA4D900491291 /* RustMozillaAppServices.framework */,
 			);
 			name = Products;
@@ -5925,30 +5880,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		288A2D851AB8B3260023ABC3 /* Localizations */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 288A2D9F1AB8B3260023ABC3 /* Build configuration list for PBXNativeTarget "Localizations" */;
-			buildPhases = (
-				288A2D811AB8B3260023ABC3 /* Sources */,
-				288A2D821AB8B3260023ABC3 /* Frameworks */,
-				288A2D841AB8B3260023ABC3 /* Resources */,
-				4368F838279665E00013419B /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Localizations;
-			packageProductDependencies = (
-				5A9FF8482942454600DF9FBB /* Common */,
-				8A8881592B20FFE0009635AE /* GCDWebServers */,
-				8A88815B2B2103AD009635AE /* WebEngine */,
-				0BED8EB92D12C055004E826B /* Shared */,
-			);
-			productName = Shared;
-			productReference = 288A2D861AB8B3260023ABC3 /* Localizations.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		43BE5774278BA4D900491291 /* RustMozillaAppServices */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43BE5785278BA4D900491291 /* Build configuration list for PBXNativeTarget "RustMozillaAppServices" */;
@@ -5987,7 +5918,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0AE3C2DE2E834C1C0022778C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				034784BA2E2690F600D04A84 /* TermsOfUse */,
@@ -6046,10 +5976,6 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Mozilla;
 				TargetAttributes = {
-					288A2D851AB8B3260023ABC3 = {
-						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 1000;
-					};
 					F84B21BD1A090F8100AAB793 = {
 						CreatedOnToolsVersion = 6.1;
 						LastSwiftMigration = 1000;
@@ -6102,94 +6028,11 @@
 			targets = (
 				F84B21BD1A090F8100AAB793 /* Client */,
 				43BE5774278BA4D900491291 /* RustMozillaAppServices */,
-				288A2D851AB8B3260023ABC3 /* Localizations */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		288A2D841AB8B3260023ABC3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D59643F125C9B8E000EAB8B9 /* ErrorPages.strings in Resources */,
-				43937C2629BA686000074633 /* ResearchSurface.strings in Resources */,
-				43470D0828B39AF80034F500 /* JumpBackIn.strings in Resources */,
-				439A220F29F69A0C00F120EE /* Notification.strings in Resources */,
-				43937C2029BA686000074633 /* EngagementNotification.strings in Resources */,
-				43937C2329BA686000074633 /* Onboarding.strings in Resources */,
-				D59643EF25C9B8E000EAB8B9 /* PrivateBrowsing.strings in Resources */,
-				4369B8812B0B75A8003791B9 /* FirefoxHomepage.strings in Resources */,
-				43C50B532A0BCAA800C6A134 /* Upgrade.strings in Resources */,
-				D59643EB25C9B8E000EAB8B9 /* ClearHistoryConfirm.strings in Resources */,
-				43B966AF2BE8F11D007448EA /* Microsurvey.strings in Resources */,
-				431F0C4A2AC1A112006D7D49 /* TabLocation.strings in Resources */,
-				43903A8F2C20502A00ACF76E /* EnhancedTrackingProtection.strings in Resources */,
-				4369D4722CF4935C0059C50F /* SocialShare.strings in Resources */,
-				436033C62CCFA811000BBEA2 /* FxANotification.strings in Resources */,
-				43A878172B838FF90039D6B7 /* PasswordAutofill.strings in Resources */,
-				43E6BE162C57AF7600C2152C /* Toolbar.strings in Resources */,
-				D59643E725C9B8E000EAB8B9 /* Intro.strings in Resources */,
-				D59643F325C9B8E000EAB8B9 /* Storage.strings in Resources */,
-				D59643E925C9B8E000EAB8B9 /* Menu.strings in Resources */,
-				D59643E625C9B8E000EAB8B9 /* LoginManager.strings in Resources */,
-				434707692C85D3DA009585F0 /* SuggestedSites.strings in Resources */,
-				4369D46F2CF4935C0059C50F /* SocialMediaApp.strings in Resources */,
-				D58A202925C9D96400105D25 /* BookmarkPanel.strings in Resources */,
-				43470D0B28B39AF80034F500 /* ToolbarLocation.strings in Resources */,
-				43903A892C20502A00ACF76E /* ActivityStream.strings in Resources */,
-				432C01582B83900600392A88 /* KeyboardAccessory.strings in Resources */,
-				43D3ED982C3BFFC900E33D46 /* EditAddress.strings in Resources */,
-				43A715402A2DF94F00DD5747 /* RememberCard.strings in Resources */,
-				43079D1F2C85D3BB0047C28D /* Bookmarks.strings in Resources */,
-				43903A922C20502A00ACF76E /* QRCode.strings in Resources */,
-				43903A8C2C20502A00ACF76E /* AddressToolbar.strings in Resources */,
-				43FA49A329C875C0005062DB /* SnackBar.strings in Resources */,
-				436033C92CCFA811000BBEA2 /* SearchEngineSelection.strings in Resources */,
-				439A221229F69A0C00F120EE /* ZoomPageBar.strings in Resources */,
-				43B296372B305F1E00A5AA9B /* Credentials.strings in Resources */,
-				43B296342B305F1E00A5AA9B /* CredentialProvider.strings in Resources */,
-				D59643EE25C9B8E000EAB8B9 /* Search.strings in Resources */,
-				433BADA429C8769800E34991 /* ErrorState.strings in Resources */,
-				43B520E42B55493E00007187 /* TabToolbar.strings in Resources */,
-				43DC75A72A24BE73007C2BCE /* DisplayCard.strings in Resources */,
-				D59643E825C9B8E000EAB8B9 /* Default Browser.strings in Resources */,
-				435E3B1F2CE21D1F00274AB9 /* LibraryPanel.strings in Resources */,
-				D59643EC25C9B8E000EAB8B9 /* Localizable.strings in Resources */,
-				43A715432A2DF94F00DD5747 /* UpdateCard.strings in Resources */,
-				D59643E525C9B8E000EAB8B9 /* AuthenticationManager.strings in Resources */,
-				43B2963D2B305F1E00A5AA9B /* LoginsHelper.strings in Resources */,
-				4378C737293E09C200D0C1C7 /* TabsTray.strings in Resources */,
-				43FA49A029C875C0005062DB /* Settings.strings in Resources */,
-				D59643F025C9B8E000EAB8B9 /* ClearPrivateDataConfirm.strings in Resources */,
-				43079D232C85D3BB0047C28D /* MainMenu.strings in Resources */,
-				436E0E152BA857AB00D01C1A /* BottomSheet.strings in Resources */,
-				D59643E325C9B8E000EAB8B9 /* ClearPrivateData.strings in Resources */,
-				43DF945A292258C300590FE3 /* SearchHeaderTitle.strings in Resources */,
-				4378C734293E09C200D0C1C7 /* Alerts.strings in Resources */,
-				D59643ED25C9B8E000EAB8B9 /* FindInPage.strings in Resources */,
-				43FA499A29C875C0005062DB /* Alert.strings in Resources */,
-				43C50B502A0BCAA800C6A134 /* FirefoxSync.strings in Resources */,
-				43F119002A52E42400C44C6C /* CustomizeFirefoxHome.strings in Resources */,
-				D59643F425C9B8E000EAB8B9 /* Today.strings in Resources */,
-				43737CB329E4259700847A6F /* Edit Card.strings in Resources */,
-				D59643F225C9B8E000EAB8B9 /* Shared.strings in Resources */,
-				4308A4E62A52E38C001D652E /* SelectCreditCard.strings in Resources */,
-				43FA499D29C875C0005062DB /* EditCard.strings in Resources */,
-				43B627762C3C001E00A188E8 /* ScanQRCode.strings in Resources */,
-				437AE3102C7C9A0C0053F7F3 /* NativeErrorPage.strings in Resources */,
-				433BADA029C8769800E34991 /* BiometricAuthentication.strings in Resources */,
-				D58A202F25C9D96400105D25 /* BookmarkPanelDeleteConfirm.strings in Resources */,
-				D59643EA25C9B8E000EAB8B9 /* HistoryPanel.strings in Resources */,
-				43D75D1A2AC1A16900D1DE87 /* Share.strings in Resources */,
-				43B2963A2B305F1E00A5AA9B /* FirefoxLogins.strings in Resources */,
-				D59643E425C9B8E000EAB8B9 /* 3DTouchActions.strings in Resources */,
-				43B296312B305F1E00A5AA9B /* ContextualHints.strings in Resources */,
-				43E168932CA183A400E67516 /* PasswordGenerator.strings in Resources */,
-				43A7153D2A2DF94F00DD5747 /* Footer.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F84B21BC1A090F8100AAB793 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -6232,10 +6075,76 @@
 				ED73684D2E4E61CD00DAF88E /* AppIcon_Beta.icon in Resources */,
 				E4CD9F5B1A71506C00318571 /* Reader.css in Resources */,
 				C714D8362E468D8200FC02E6 /* homepageRedesignOff.json in Resources */,
+				0A06DA1F2E83CFE0001CC241 /* SuggestedSites.strings in Resources */,
+				0A06DA202E83CFE0001CC241 /* Bookmarks.strings in Resources */,
+				0A06DA212E83CFE0001CC241 /* ScanQRCode.strings in Resources */,
+				0A06DA222E83CFE0001CC241 /* SearchHeaderTitle.strings in Resources */,
+				0A06DA232E83CFE0001CC241 /* Notification.strings in Resources */,
+				0A06DA242E83CFE0001CC241 /* SearchEngineSelection.strings in Resources */,
+				0A06DA252E83CFE0001CC241 /* BiometricAuthentication.strings in Resources */,
+				0A06DA262E83CFE0001CC241 /* NativeErrorPage.strings in Resources */,
+				0A06DA272E83CFE0001CC241 /* SelectCreditCard.strings in Resources */,
+				0A06DA282E83CFE0001CC241 /* SocialMediaApp.strings in Resources */,
+				0A06DA292E83CFE0001CC241 /* ZoomPageBar.strings in Resources */,
+				0A06DA2A2E83CFE0001CC241 /* LoginsHelper.strings in Resources */,
+				0A06DA2B2E83CFE0001CC241 /* UpdateCard.strings in Resources */,
+				0A06DA2C2E83CFE0001CC241 /* MainMenu.strings in Resources */,
+				0A06DA2D2E83CFE0001CC241 /* Today.strings in Resources */,
+				0A06DA2E2E83CFE0001CC241 /* FirefoxLogins.strings in Resources */,
+				0A06DA2F2E83CFE0001CC241 /* TabLocation.strings in Resources */,
+				0A06DA302E83CFE0001CC241 /* Onboarding.strings in Resources */,
+				0A06DA312E83CFE0001CC241 /* BottomSheet.strings in Resources */,
+				0A06DA322E83CFE0001CC241 /* SnackBar.strings in Resources */,
+				0A06DA332E83CFE0001CC241 /* Settings.strings in Resources */,
+				0A06DA342E83CFE0001CC241 /* DisplayCard.strings in Resources */,
+				0A06DA352E83CFE0001CC241 /* FxANotification.strings in Resources */,
+				0A06DA362E83CFE0001CC241 /* BookmarkPanel.strings in Resources */,
+				0A06DA372E83CFE0001CC241 /* ErrorState.strings in Resources */,
+				0A06DA382E83CFE0001CC241 /* PasswordAutofill.strings in Resources */,
+				0A06DA392E83CFE0001CC241 /* Credentials.strings in Resources */,
+				0A06DA3A2E83CFE0001CC241 /* EngagementNotification.strings in Resources */,
+				0A06DA3B2E83CFE0001CC241 /* Toolbar.strings in Resources */,
+				0A06DA3C2E83CFE0001CC241 /* PasswordGenerator.strings in Resources */,
+				0A06DA3D2E83CFE0001CC241 /* Microsurvey.strings in Resources */,
+				0A06DA3E2E83CFE0001CC241 /* QRCode.strings in Resources */,
+				0A06DA3F2E83CFE0001CC241 /* Alert.strings in Resources */,
+				0A06DA402E83CFE0001CC241 /* Footer.strings in Resources */,
+				0A06DA412E83CFE0001CC241 /* FirefoxHomepage.strings in Resources */,
+				0A06DA422E83CFE0001CC241 /* AddressToolbar.strings in Resources */,
+				0A06DA432E83CFE0001CC241 /* FirefoxSync.strings in Resources */,
+				0A06DA442E83CFE0001CC241 /* Share.strings in Resources */,
+				0A06DA452E83CFE0001CC241 /* JumpBackIn.strings in Resources */,
+				0A06DA462E83CFE0001CC241 /* EnhancedTrackingProtection.strings in Resources */,
+				0A06DA472E83CFE0001CC241 /* ContextualHints.strings in Resources */,
+				0A06DA482E83CFE0001CC241 /* SocialShare.strings in Resources */,
+				0A06DA492E83CFE0001CC241 /* Alerts.strings in Resources */,
+				0A06DA4A2E83CFE0001CC241 /* TabsTray.strings in Resources */,
+				0A06DA4B2E83CFE0001CC241 /* KeyboardAccessory.strings in Resources */,
+				0A06DA4C2E83CFE0001CC241 /* EditAddress.strings in Resources */,
+				0A06DA4D2E83CFE0001CC241 /* EditCard.strings in Resources */,
+				0A06DA4E2E83CFE0001CC241 /* ActivityStream.strings in Resources */,
+				0A06DA4F2E83CFE0001CC241 /* CustomizeFirefoxHome.strings in Resources */,
+				0A06DA502E83CFE0001CC241 /* Upgrade.strings in Resources */,
+				0A06DA512E83CFE0001CC241 /* ResearchSurface.strings in Resources */,
+				0A06DA522E83CFE0001CC241 /* TabToolbar.strings in Resources */,
+				0A06DA532E83CFE0001CC241 /* BookmarkPanelDeleteConfirm.strings in Resources */,
+				0A06DA542E83CFE0001CC241 /* Edit Card.strings in Resources */,
+				0A06DA552E83CFE0001CC241 /* LibraryPanel.strings in Resources */,
+				0A06DA562E83CFE0001CC241 /* CredentialProvider.strings in Resources */,
+				0A06DA572E83CFE0001CC241 /* ToolbarLocation.strings in Resources */,
+				0A06DA582E83CFE0001CC241 /* RememberCard.strings in Resources */,
 				D0FCF8061FE4772D004A7995 /* AllFramesAtDocumentEnd.js in Resources */,
 				BCFB141D2E1FFEC00005D46B /* feltPrivacySimplifiedUIOff.json in Resources */,
 				D37524871C6E8B5A00A5F6C2 /* topdomains.txt in Resources */,
 				8ABE9F1E2CB462CA0080E1DF /* RemoteSettingsFetchConfig.json in Resources */,
+				0A06DA0E2E83CFC6001CC241 /* ErrorPages.strings in Resources */,
+				0A06DA0F2E83CFC6001CC241 /* ClearHistoryConfirm.strings in Resources */,
+				0A06DA102E83CFC6001CC241 /* ClearPrivateDataConfirm.strings in Resources */,
+				0A06DA112E83CFC6001CC241 /* 3DTouchActions.strings in Resources */,
+				0A06DA122E83CFC6001CC241 /* AuthenticationManager.strings in Resources */,
+				0A06DA132E83CFC6001CC241 /* ClearPrivateData.strings in Resources */,
+				0A06DA142E83CFC6001CC241 /* Default Browser.strings in Resources */,
+				0A06DA152E83CFC6001CC241 /* FindInPage.strings in Resources */,
 				BCFB141F2E1FFECC0005D46B /* feltPrivacySimplifiedUIOn.json in Resources */,
 				1D91C1872CF11EA500B24960 /* disconnect-block-cookies-advertising.json in Resources */,
 				B184D4B62E1D4C2B00549CAC /* storiesRedesignOff.json in Resources */,
@@ -6245,6 +6154,15 @@
 				8C29376C2BF79EE000146613 /* AddressFormManager.mjs in Resources */,
 				43175DB626B8774D00C41C31 /* Ads.js in Resources */,
 				D0FCF8081FE4772D004A7995 /* MainFrameAtDocumentStart.js in Resources */,
+				0A06DA162E83CFCD001CC241 /* Localizable.strings in Resources */,
+				0A06DA172E83CFCD001CC241 /* Search.strings in Resources */,
+				0A06DA182E83CFCD001CC241 /* HistoryPanel.strings in Resources */,
+				0A06DA192E83CFCD001CC241 /* Intro.strings in Resources */,
+				0A06DA1A2E83CFCD001CC241 /* Shared.strings in Resources */,
+				0A06DA1B2E83CFCD001CC241 /* LoginManager.strings in Resources */,
+				0A06DA1C2E83CFCD001CC241 /* Storage.strings in Resources */,
+				0A06DA1D2E83CFCD001CC241 /* PrivateBrowsing.strings in Resources */,
+				0A06DA1E2E83CFCD001CC241 /* Menu.strings in Resources */,
 				D30684F11C84F12A002D8D82 /* SearchPlugins in Resources */,
 				8A1A93582B757C7C0069C190 /* gradient.json in Resources */,
 				74821FFE1DB6D3AC00EEEA72 /* MailSchemes.plist in Resources */,
@@ -6381,17 +6299,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		288A2D811AB8B3260023ABC3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0BED8EB42D12BFB0004E826B /* Strings.swift in Sources */,
-				E65075B11E37F7AB006961AC /* FSUtils.m in Sources */,
-				0BED8EB82D12BFFD004E826B /* Date+relativeTimeString.swift in Sources */,
-				0BED8EB62D12BFED004E826B /* DeviceInfo+defaultClientName.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		43BE577C278BA4D900491291 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -7417,6 +7324,10 @@
 				612194E32CE507CF001664BB /* WallpaperBackgroundView.swift in Sources */,
 				0BDDB3462CA6E43A00D501DF /* BookmarksSaver.swift in Sources */,
 				EBB89506219398E500EB91A0 /* TabContentBlocker.swift in Sources */,
+				0A06DA0A2E83CFB1001CC241 /* Strings.swift in Sources */,
+				0A06DA0B2E83CFB1001CC241 /* DeviceInfo+defaultClientName.swift in Sources */,
+				0A06DA0C2E83CFB1001CC241 /* FSUtils.m in Sources */,
+				0A06DA0D2E83CFB1001CC241 /* Date+relativeTimeString.swift in Sources */,
 				E1B9A2C22CAD91EF00F6A0E9 /* ToolbarTelemetry.swift in Sources */,
 				21F2A2D22B0BC85200626AEC /* InactiveTabsModel.swift in Sources */,
 				966206CD2698DE1E005C0A55 /* BookmarksViewModel.swift in Sources */,
@@ -7470,11 +7381,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0AE3C2DE2E834C1C0022778C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 288A2D851AB8B3260023ABC3 /* Localizations */;
-			targetProxy = 0AE3C2DD2E834C1C0022778C /* PBXContainerItemProxy */;
-		};
 		459F39E52A031D16008C3411 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 459F39E42A031D16008C3411 /* Glean */;
@@ -8085,33 +7991,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		288A2DA01AB8B3260023ABC3 /* Fennec */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				COPY_PHASE_STRIP = NO;
-				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = 43AQ936H96;
-				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
-				INFOPLIST_FILE = "Shared/Supporting Files/Info.plist";
-				LOCALIZED_STRING_MACRO_NAMES = (
-					MZLocalizedString,
-					NSLocalizedString,
-					CFCopyLocalizedString,
-				);
-				MACH_O_TYPE = mh_dylib;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Shared/Shared-Bridging-Header.h";
-				SWIFT_STRICT_CONCURRENCY = complete;
-			};
-			name = Fennec;
-		};
 		43BE5786278BA4D900491291 /* Fennec */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -8194,14 +8073,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		288A2D9F1AB8B3260023ABC3 /* Build configuration list for PBXNativeTarget "Localizations" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				288A2DA01AB8B3260023ABC3 /* Fennec */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Fennec;
-		};
 		43BE5785278BA4D900491291 /* Build configuration list for PBXNativeTarget "RustMozillaAppServices" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -8383,10 +8254,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SummarizeKit;
 		};
-		0BED8EB92D12C055004E826B /* Shared */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Shared;
-		};
 		0BF802E12CFF0937005633E5 /* Shared */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Shared;
@@ -8447,22 +8314,9 @@
 			package = 5A984D322C8A31A0007938C9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		5A9FF8482942454600DF9FBB /* Common */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Common;
-		};
 		819656162C80C6F300E62323 /* MenuKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MenuKit;
-		};
-		8A8881592B20FFE0009635AE /* GCDWebServers */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 433F87CC2788EAB600693368 /* XCRemoteSwiftPackageReference "GCDWebServer" */;
-			productName = GCDWebServers;
-		};
-		8A88815B2B2103AD009635AE /* WebEngine */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = WebEngine;
 		};
 		8AB30EC72B6C038600BD9A9B /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
