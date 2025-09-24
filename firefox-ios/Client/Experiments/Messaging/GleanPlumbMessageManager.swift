@@ -9,6 +9,7 @@ import Shared
 import class MozillaAppServices.FeatureHolder
 import enum MozillaAppServices.NimbusError
 import protocol MozillaAppServices.NimbusMessagingHelperProtocol
+import class MozillaAppServices.FeatureHolder
 
 protocol GleanPlumbMessageManagerProtocol {
     /// Performs the bookkeeping and preparation of messages for their respective surfaces.

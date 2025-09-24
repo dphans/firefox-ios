@@ -8,36 +8,19 @@ open class AppInfo {
     /// Return the main application bundle. If this is called from an extension, the containing app bundle is returned.
     public static var applicationBundle: Bundle {
         let bundle = Bundle.main
-        switch bundle.bundleURL.pathExtension {
-        case "app":
-            return bundle
-        case "appex":
-            // .../Client.app/PlugIns/SendTo.appex
-            return Bundle(url: bundle.bundleURL.deletingLastPathComponent().deletingLastPathComponent())!
-        default:
-            fatalError("Unable to get application Bundle (Bundle.main.bundlePath=\(bundle.bundlePath))")
-        }
+        return bundle
     }
 
     public static var bundleIdentifier: String {
-        guard let bundleIdentifier = applicationBundle.object(forInfoDictionaryKey: "CFBundleIdentifier") as? String else {
-            fatalError("CFBundleIdentifier not found in info.plist")
-        }
-        return bundleIdentifier
+        return "com.browser"
     }
 
     public static var appVersion: String {
-        guard let appVersion = applicationBundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
-            fatalError("CFBundleShortVersionString not found in info.plist")
-        }
-        return appVersion
+        return "1.0"
     }
 
     public static var buildNumber: String {
-        guard let buildNumber = applicationBundle.object(forInfoDictionaryKey: String(kCFBundleVersionKey)) as? String else {
-            fatalError("kCFBundleVersionKey not found in info.plist")
-        }
-        return buildNumber
+        return "1"
     }
 
     /// Return the base bundle identifier.
@@ -46,15 +29,6 @@ open class AppInfo {
     /// case of the former, it will chop off the extension identifier from the bundle since that is a suffix not part
     /// of the *base* bundle identifier.
     public static var baseBundleIdentifier: String {
-        let bundle = Bundle.main
-        guard let packageType = bundle.object(forInfoDictionaryKey: "CFBundlePackageType") as? String else {
-            fatalError("CFBundlePackageType not found in info.plist")
-        }
-        let baseBundleIdentifier = bundle.bundleIdentifier!
-        if packageType == "XPC!" {
-            let components = baseBundleIdentifier.components(separatedBy: ".")
-            return components[0..<components.count-1].joined(separator: ".")
-        }
-        return baseBundleIdentifier
+        return bundleIdentifier
     }
 }

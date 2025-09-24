@@ -100,6 +100,8 @@
 		0A93C8AC2C870E7100BEA143 /* TrackingProtectionToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A93C8AB2C870E7100BEA143 /* TrackingProtectionToggleView.swift */; };
 		0ABCD45B2D355260005D704A /* TermsOfServiceTelemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABCD45A2D355255005D704A /* TermsOfServiceTelemetry.swift */; };
 		0AD3EEAC2C2485A7001044E5 /* ThemedCenteredTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD3EEAB2C2485A7001044E5 /* ThemedCenteredTableViewCell.swift */; };
+		0AE193552E84150E00E33A79 /* RustMozillaAppServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE578A278BA4D900491291 /* RustMozillaAppServices.framework */; };
+		0AE193562E84150E00E33A79 /* RustMozillaAppServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE578A278BA4D900491291 /* RustMozillaAppServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0AE3C2B82E8346FA0022778C /* Common in Frameworks */ = {isa = PBXBuildFile; productRef = 0AE3C2B72E8346FA0022778C /* Common */; };
 		0AE3C2BA2E8346FA0022778C /* ComponentLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 0AE3C2B92E8346FA0022778C /* ComponentLibrary */; };
 		0AE3C2BC2E8346FA0022778C /* ContentBlockingGenerator in Frameworks */ = {isa = PBXBuildFile; productRef = 0AE3C2BB2E8346FA0022778C /* ContentBlockingGenerator */; };
@@ -380,7 +382,6 @@
 		3BB50E201D627539004B33DF /* LegacyHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB50E1F1D627539004B33DF /* LegacyHomepageViewController.swift */; };
 		3BCE6D3C1CEB9E4D0080928C /* ThirdPartySearchAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCE6D3B1CEB9E4D0080928C /* ThirdPartySearchAlerts.swift */; };
 		3BF56D271CDBBE1F00AC4D75 /* SimpleToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF56D261CDBBE1F00AC4D75 /* SimpleToast.swift */; };
-		43017ECB278E0C6700CED011 /* RustMozillaAppServices.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE578A278BA4D900491291 /* RustMozillaAppServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43162A2F2492DB7800F91658 /* EmptyPrivateTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43162A2E2492DB7800F91658 /* EmptyPrivateTabsView.swift */; };
 		43175DB626B8774D00C41C31 /* Ads.js in Resources */ = {isa = PBXBuildFile; fileRef = 43175DB526B8774D00C41C31 /* Ads.js */; };
 		43175DB826B87D2C00C41C31 /* AdsTelemetryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43175DB726B87D2C00C41C31 /* AdsTelemetryHelper.swift */; };
@@ -403,7 +404,6 @@
 		43A5643823CD1E1C00B6857D /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5643523CD1E1B00B6857D /* UpdateViewController.swift */; };
 		43AB6FA225DC53D30016B015 /* GoogleTopSiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AB6F9C25DC53D20016B015 /* GoogleTopSiteManager.swift */; };
 		43AB6FA425DC53D30016B015 /* LegacyLabelButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AB6F9E25DC53D20016B015 /* LegacyLabelButtonHeaderView.swift */; };
-		43BE580E278BABCF00491291 /* RustMozillaAppServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BE578A278BA4D900491291 /* RustMozillaAppServices.framework */; };
 		43D00493296FC48F00CB0F31 /* CreditCardSettingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D00492296FC48F00CB0F31 /* CreditCardSettingsEmptyView.swift */; };
 		43D16B7A29831C7F009F8279 /* CreditCardAutofillToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D16B7929831C7F009F8279 /* CreditCardAutofillToggle.swift */; };
 		43D16B7C29831CD0009F8279 /* CreditCardItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D16B7B29831CD0009F8279 /* CreditCardItemRow.swift */; };
@@ -552,9 +552,6 @@
 		8A2068372D6D52830063A77B /* ExperimentTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2068362D6D52830063A77B /* ExperimentTabCell.swift */; };
 		8A2783F1275FFDC50080D29D /* KeyboardPressesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2783F0275FFDC50080D29D /* KeyboardPressesHandler.swift */; };
 		8A285B08294A5D4C00149B0F /* HomepageHeroImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A285B07294A5D4C00149B0F /* HomepageHeroImageViewModel.swift */; };
-		8A2B1A5D28216C4D0061216B /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8A2B1A5A28216C4C0061216B /* Debug.xcconfig */; };
-		8A2B1A5E28216C4D0061216B /* Common.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8A2B1A5B28216C4C0061216B /* Common.xcconfig */; };
-		8A2B1A5F28216C4D0061216B /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8A2B1A5C28216C4D0061216B /* Release.xcconfig */; };
 		8A2D593E27DC0AA100713EC9 /* TopSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2D593D27DC0AA100713EC9 /* TopSite.swift */; };
 		8A2DAD4B2CC02AA00067ECD0 /* LabelButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DAD4A2CC02AA00067ECD0 /* LabelButtonHeaderView.swift */; };
 		8A2F21CB2DEDC2AB00C9F4DE /* StartAtHomeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2F21CA2DEDC2A800C9F4DE /* StartAtHomeAction.swift */; };
@@ -1277,15 +1274,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E6B09CD31C74EEDB00C63FA1 /* Copy Frameworks */ = {
+		0AE193572E84150E00E33A79 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43017ECB278E0C6700CED011 /* RustMozillaAppServices.framework in Copy Frameworks */,
+				0AE193562E84150E00E33A79 /* RustMozillaAppServices.framework in Embed Frameworks */,
 			);
-			name = "Copy Frameworks";
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F84B22531A0920C600AAB793 /* Embed App Extensions */ = {
@@ -1680,7 +1677,6 @@
 		5A271ABC2860B0D700471CE4 /* WebServerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServerUtil.swift; sourceTree = "<group>"; };
 		5A2918CA2B522338002B197E /* GeneralBrowserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralBrowserAction.swift; sourceTree = "<group>"; };
 		5A2918CC2B522381002B197E /* ToastType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastType.swift; sourceTree = "<group>"; };
-		5A2D1A4D2D84BD210066F7C9 /* version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = version.xcconfig; path = Configuration/version.xcconfig; sourceTree = "<group>"; };
 		5A32C2B52AD8517200A9B5A4 /* MetricKitWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricKitWrapper.swift; sourceTree = "<group>"; };
 		5A3A2A0C287F742C00B79EAC /* BackgroundSyncUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSyncUtility.swift; sourceTree = "<group>"; };
 		5A3A7DCD2886F7880065F81A /* BookmarksDataAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksDataAdaptor.swift; sourceTree = "<group>"; };
@@ -1691,7 +1687,6 @@
 		5A70EF20295E3E0B00790249 /* UnitTestSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestSceneDelegate.swift; sourceTree = "<group>"; };
 		5A8017DF29CE15D90047120D /* TabManagerImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManagerImplementation.swift; sourceTree = "<group>"; };
 		5A96FB592D94356C00917B12 /* ScreenshotSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotSetting.swift; sourceTree = "<group>"; };
-		5A96FB5D2D9447E600917B12 /* FirefoxStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = FirefoxStaging.xcconfig; path = Configuration/FirefoxStaging.xcconfig; sourceTree = "<group>"; };
 		5A96FB5E2D96DA9700917B12 /* TabTraySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTraySelectorView.swift; sourceTree = "<group>"; };
 		5A9F833F2B2B4AE800272819 /* TabPeekAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPeekAction.swift; sourceTree = "<group>"; };
 		5A9F83412B2B796800272819 /* TabPeekState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPeekState.swift; sourceTree = "<group>"; };
@@ -1803,9 +1798,6 @@
 		8A2068362D6D52830063A77B /* ExperimentTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentTabCell.swift; sourceTree = "<group>"; };
 		8A2783F0275FFDC50080D29D /* KeyboardPressesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPressesHandler.swift; sourceTree = "<group>"; };
 		8A285B07294A5D4C00149B0F /* HomepageHeroImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageHeroImageViewModel.swift; sourceTree = "<group>"; };
-		8A2B1A5A28216C4C0061216B /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Configuration/Debug.xcconfig; sourceTree = "<group>"; };
-		8A2B1A5B28216C4C0061216B /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Common.xcconfig; path = Configuration/Common.xcconfig; sourceTree = "<group>"; };
-		8A2B1A5C28216C4D0061216B /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Configuration/Release.xcconfig; sourceTree = "<group>"; };
 		8A2D593D27DC0AA100713EC9 /* TopSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSite.swift; sourceTree = "<group>"; };
 		8A2DAD4A2CC02AA00067ECD0 /* LabelButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButtonHeaderView.swift; sourceTree = "<group>"; };
 		8A2F21CA2DEDC2A800C9F4DE /* StartAtHomeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAtHomeAction.swift; sourceTree = "<group>"; };
@@ -2024,7 +2016,6 @@
 		8AED23052D400098000FF624 /* HomepageMessageCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageMessageCardCell.swift; sourceTree = "<group>"; };
 		8AED23C427AC1F9500DE7E97 /* BaseAlphaStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlphaStackView.swift; sourceTree = "<group>"; };
 		8AEDB11429F9F00400F2A53B /* SceneContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneContainer.swift; sourceTree = "<group>"; };
-		8AEDFE832C9DAB9C00821359 /* FennecTesting.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FennecTesting.xcconfig; sourceTree = "<group>"; };
 		8AEE62C62756BA34003207D1 /* LoginsHelper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = LoginsHelper.js; path = AllFrames/AtDocumentStart/LoginsHelper.js; sourceTree = "<group>"; };
 		8AEE62C72756BA34003207D1 /* TrackingProtectionStats.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = TrackingProtectionStats.js; path = AllFrames/AtDocumentStart/TrackingProtectionStats.js; sourceTree = "<group>"; };
 		8AEE62C82756BA34003207D1 /* DownloadHelper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = DownloadHelper.js; path = AllFrames/AtDocumentStart/DownloadHelper.js; sourceTree = "<group>"; };
@@ -2484,8 +2475,6 @@
 		E4CD9F6C1A77DD2800318571 /* ReaderModeStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderModeStyleViewController.swift; sourceTree = "<group>"; };
 		E4D6BEB81A0930EC00F538BD /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		E58368A9287D632F0087A449 /* StoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryProvider.swift; sourceTree = "<group>"; };
-		E60961861B62B8A700DD640F /* Fennec.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Fennec.xcconfig; path = Configuration/Fennec.xcconfig; sourceTree = "<group>"; };
-		E60961891B62B8C800DD640F /* Firefox.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Firefox.xcconfig; path = Configuration/Firefox.xcconfig; sourceTree = "<group>"; };
 		E60D03171D511398002FE3F6 /* SyncDisplayState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncDisplayState.swift; sourceTree = "<group>"; };
 		E6231C001B90A44F005ABB0D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E6231C041B90A472005ABB0D /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
@@ -2508,9 +2497,7 @@
 		E698FFD91B4AADF40001F623 /* TabScrollHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabScrollHandler.swift; sourceTree = "<group>"; };
 		E69922121B94E3EF007C480D /* Licenses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Licenses.html; sourceTree = "<group>"; };
 		E6CF28E61CB43B7900151AB3 /* SensitiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensitiveViewController.swift; sourceTree = "<group>"; };
-		E6DCC1ED1DCBB6AA00CEC4B7 /* Fennec.enterprise.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Fennec.enterprise.xcconfig; path = Configuration/Fennec.enterprise.xcconfig; sourceTree = "<group>"; };
 		E6F738741EB7A8D300B50143 /* FennecApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FennecApplication.entitlements; sourceTree = "<group>"; };
-		E6FCC43C1C40565200DF6113 /* FirefoxBeta.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = FirefoxBeta.xcconfig; path = Configuration/FirefoxBeta.xcconfig; sourceTree = "<group>"; };
 		E6FF6AC91D873CFF0070C294 /* PageMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageMetadata.swift; sourceTree = "<group>"; };
 		EB1C84B6212EFFBF001489DF /* BrowserViewController+ReaderMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrowserViewController+ReaderMode.swift"; sourceTree = "<group>"; };
 		EB98550024226EF60040F24B /* AppDelegate+SyncSentTabs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+SyncSentTabs.swift"; sourceTree = "<group>"; };
@@ -2613,7 +2600,6 @@
 				8A08EC6227EBDCA400E119C7 /* iAd.framework in Frameworks */,
 				0AE3C2CA2E8346FA0022778C /* TabDataStore in Frameworks */,
 				0AE3C2C42E8346FA0022778C /* Shared in Frameworks */,
-				43BE580E278BABCF00491291 /* RustMozillaAppServices.framework in Frameworks */,
 				0AE3C2B82E8346FA0022778C /* Common in Frameworks */,
 				8AF2D0FC2A5F272A00C7DD69 /* ComponentLibrary in Frameworks */,
 				0AE3C2C82E8346FA0022778C /* SummarizeKit in Frameworks */,
@@ -2621,6 +2607,7 @@
 				0AE3C2D02E8346FA0022778C /* WebEngine in Frameworks */,
 				C8E18F20222EDED000E30E52 /* SafariServices.framework in Frameworks */,
 				C8E18F1E222EDE4500E30E52 /* Accelerate.framework in Frameworks */,
+				0AE193552E84150E00E33A79 /* RustMozillaAppServices.framework in Frameworks */,
 				F8324A7C2649A5A5007E4BFA /* AuthenticationServices.framework in Frameworks */,
 				E6231C051B90A472005ABB0D /* libxml2.2.tbd in Frameworks */,
 				E17798A02BD8043800F6F0EB /* ToolbarKit in Frameworks */,
@@ -5420,23 +5407,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E60961841B62B7E100DD640F /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				5A2D1A4D2D84BD210066F7C9 /* version.xcconfig */,
-				8A2B1A5B28216C4C0061216B /* Common.xcconfig */,
-				8A2B1A5A28216C4C0061216B /* Debug.xcconfig */,
-				E6DCC1ED1DCBB6AA00CEC4B7 /* Fennec.enterprise.xcconfig */,
-				E60961861B62B8A700DD640F /* Fennec.xcconfig */,
-				8AEDFE832C9DAB9C00821359 /* FennecTesting.xcconfig */,
-				E60961891B62B8C800DD640F /* Firefox.xcconfig */,
-				E6FCC43C1C40565200DF6113 /* FirefoxBeta.xcconfig */,
-				5A96FB5D2D9447E600917B12 /* FirefoxStaging.xcconfig */,
-				8A2B1A5C28216C4D0061216B /* Release.xcconfig */,
-			);
-			name = Configuration;
-			sourceTree = "<group>";
-		};
 		E63ED8DF1BFD254E0097D08E /* PasswordManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -5691,7 +5661,6 @@
 				D81E377D2242FF61006AC72D /* Client-Bridging-Header.h */,
 				F84B21E41A0910F600AAB793 /* Application */,
 				F84B21EB1A0910F600AAB793 /* Assets */,
-				E60961841B62B7E100DD640F /* Configuration */,
 				8AD984F12AF1554F00B9FDA4 /* ContentBlocker */,
 				8A93F85C29D36D9F004159D9 /* Coordinators */,
 				E689C6FF1E0C716F008BAADB /* Entitlements */,
@@ -5908,7 +5877,7 @@
 				F84B21BC1A090F8100AAB793 /* Resources */,
 				28CE83DE1A1D1E7C00576538 /* Frameworks */,
 				F84B22531A0920C600AAB793 /* Embed App Extensions */,
-				E6B09CD31C74EEDB00C63FA1 /* Copy Frameworks */,
+				0AE193572E84150E00E33A79 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -6162,7 +6131,6 @@
 				8A1A93582B757C7C0069C190 /* gradient.json in Resources */,
 				74821FFE1DB6D3AC00EEEA72 /* MailSchemes.plist in Resources */,
 				D308EE561CBF0BF5006843F2 /* CertError.css in Resources */,
-				8A2B1A5D28216C4D0061216B /* Debug.xcconfig in Resources */,
 				0BA1E00E1B03FB0B007675AF /* NetError.html in Resources */,
 				23BEA768251A99ED00A014BF /* NewYorkMedium-BoldItalic.otf in Resources */,
 				E4A961381AC06FA50069AD6F /* ReaderViewLoading.html in Resources */,
@@ -6173,14 +6141,12 @@
 				8A7D1AC52BA3542600162F4B /* splashScreen.json in Resources */,
 				8AEE62C92756BA34003207D1 /* LoginsHelper.js in Resources */,
 				1D91C1812CF11EA500B24960 /* disconnect-block-advertising.json in Resources */,
-				8A2B1A5F28216C4D0061216B /* Release.xcconfig in Resources */,
 				1D91C17E2CF11EA500B24960 /* disconnect-block-cookies-analytics.json in Resources */,
 				8CC033FA2BA476840033449E /* FormAutofillHelper.js in Resources */,
 				D0E17FB6201F847600F1FCB5 /* FxASignIn.js in Resources */,
 				0BF7FE422E09620900FD016A /* swipingTabsOn.json in Resources */,
 				ED287B752E4D4C0500527204 /* AppIcon.icon in Resources */,
 				ED287B762E4D4C0500527204 /* AppIcon_LiquidGlass_Alt_DarkPurple.icon in Resources */,
-				8A2B1A5E28216C4D0061216B /* Common.xcconfig in Resources */,
 				1D91C1862CF11EA500B24960 /* disconnect-block-social.json in Resources */,
 				39A35AED1C0662A3006B9E87 /* SpotlightHelper.js in Resources */,
 				8AF4E7712C45B98F00BAD91C /* RemotePasswordRules.json in Resources */,
@@ -7890,38 +7856,46 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 43AQ936H96;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				EAGER_LINKING = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				INFOPLIST_FILE = "RustMozillaAppServices-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LOCALIZED_STRING_MACRO_NAMES = (
 					MZLocalizedString,
 					NSLocalizedString,
 					CFCopyLocalizedString,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.browser.client.rust;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/Shared/Shared-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Fennec;
 		};
 		F84B21DB1A090F8100AAB793 /* Fennec */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E60961861B62B8A700DD640F /* Fennec.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 43AQ936H96;
 				EAGER_LINKING = YES;
 				FUSE_BUILD_SCRIPT_PHASES = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = YES;
 				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = YES;
@@ -7931,6 +7905,7 @@
 				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = YES;
 				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = YES;
 				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = YES;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_WORKSPACE = YES;
 			};
 			name = Fennec;
@@ -7941,20 +7916,25 @@
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon_Alt_Color_Blue AppIcon_Alt_Color_Cyan AppIcon_Alt_Color_Green AppIcon_Alt_Color_Orange AppIcon_Alt_Color_Pink AppIcon_Alt_Color_Purple AppIcon_Alt_Color_Red AppIcon_Alt_Color_Yellow AppIcon_Alt_Gradient_BlueHour AppIcon_Alt_Gradient_GoldenHour AppIcon_Alt_Gradient_Twilight AppIcon_Alt_Gradient_Sunset AppIcon_Alt_Gradient_Sunrise AppIcon_Alt_Gradient_NorthernLights AppIcon_Alt_Gradient_Midnight AppIcon_Alt_Gradient_Midday AppIcon_Alt_DarkPurple";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Developer;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 43AQ936H96;
+				DEVELOPMENT_TEAM = "";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INCLUDE_SETTINGS_BUNDLE = NO;
+				INFOPLIST_FILE = Client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID)";
+				MOZ_PUBLIC_URL_SCHEME = privatesurf;
+				MOZ_TODAY_WIDGET_SEARCH_DISPLAY_NAME = "App - Search";
+				PRODUCT_BUNDLE_IDENTIFIER = com.browser.client;
 				PRODUCT_MODULE_NAME = Client;
-				PRODUCT_NAME = Client;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
