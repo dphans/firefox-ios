@@ -7,7 +7,7 @@
 
 #import "FSReadingList.h"
 
-#import "ThirdParty/Apple/UIImage+ImageEffects.h"
+#import "Extensions/UIImage+ImageEffects.h"
 
 #import "Shared-Bridging-Header.h"
 #import "Client-Bridging-Header.h"

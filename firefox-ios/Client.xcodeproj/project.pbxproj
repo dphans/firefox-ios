@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		033A62002E77FE9900A84E8A /* ResetTermsOfServiceAcceptancePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A61FF2E77FE9900A84E8A /* ResetTermsOfServiceAcceptancePage.swift */; };
+		0A06DA092E83CE86001CC241 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A06DA082E83CE86001CC241 /* UIImage+ImageEffects.m */; };
 		0A3F57F92CEDD4CA0051B001 /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F57F82CEDD4CA0051B001 /* TermsOfServiceViewController.swift */; };
 		0A44ABAC2D6DC2520034FA86 /* ThemedLearnMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44ABAB2D6DC2410034FA86 /* ThemedLearnMoreTableViewCell.swift */; };
 		0A49784A2C53E63200B1E82A /* TrackingProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4978492C53E63200B1E82A /* TrackingProtectionViewController.swift */; };
@@ -1099,7 +1100,6 @@
 		D88FDA9F1F4E2B9200FD9709 /* PhotonActionSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88FDA9E1F4E2B9200FD9709 /* PhotonActionSheetProtocol.swift */; };
 		D88FDAAF1F4E2BA000FD9709 /* PhotonActionSheetAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88FDAAE1F4E2BA000FD9709 /* PhotonActionSheetAnimator.swift */; };
 		D8AA923421A602DC002605C0 /* HomePageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AA923321A602DC002605C0 /* HomePageSettingViewController.swift */; };
-		D8FDEB57220CFE970069A582 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FDEB55220CFE970069A582 /* UIImage+ImageEffects.m */; };
 		DAE6DF1B29AD78DA0094BD1B /* BrowserViewController+ZoomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE6DF1A29AD78DA0094BD1B /* BrowserViewController+ZoomPage.swift */; };
 		DD31E0FB1B382B520077078A /* TabPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31E0FA1B382B520077078A /* TabPrintPageRenderer.swift */; };
 		DDA24A431FD84D630098F159 /* DefaultSearchPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA24A341FD84D620098F159 /* DefaultSearchPrefs.swift */; };
@@ -1329,6 +1329,8 @@
 
 /* Begin PBXFileReference section */
 		033A61FF2E77FE9900A84E8A /* ResetTermsOfServiceAcceptancePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetTermsOfServiceAcceptancePage.swift; sourceTree = "<group>"; };
+		0A06DA072E83CE86001CC241 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		0A06DA082E83CE86001CC241 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		0A3F57F82CEDD4CA0051B001 /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		0A44ABAB2D6DC2410034FA86 /* ThemedLearnMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedLearnMoreTableViewCell.swift; sourceTree = "<group>"; };
 		0A4978492C53E63200B1E82A /* TrackingProtectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingProtectionViewController.swift; sourceTree = "<group>"; };
@@ -2420,8 +2422,6 @@
 		D88FDA9E1F4E2B9200FD9709 /* PhotonActionSheetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotonActionSheetProtocol.swift; sourceTree = "<group>"; };
 		D88FDAAE1F4E2BA000FD9709 /* PhotonActionSheetAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotonActionSheetAnimator.swift; sourceTree = "<group>"; };
 		D8AA923321A602DC002605C0 /* HomePageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageSettingViewController.swift; sourceTree = "<group>"; };
-		D8FDEB54220CFE970069A582 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "ThirdParty/Apple/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		D8FDEB55220CFE970069A582 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "ThirdParty/Apple/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		DAD46F3324A1606C001B3967 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		DAD46F3524A1606C001B3967 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		DAE6DF1A29AD78DA0094BD1B /* BrowserViewController+ZoomPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewController+ZoomPage.swift"; sourceTree = "<group>"; };
@@ -2519,7 +2519,6 @@
 		E60D03171D511398002FE3F6 /* SyncDisplayState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncDisplayState.swift; sourceTree = "<group>"; };
 		E6231C001B90A44F005ABB0D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E6231C041B90A472005ABB0D /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
-		E62AC15F1E956AFC00843532 /* FennecEnterpriseApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FennecEnterpriseApplication.entitlements; sourceTree = "<group>"; };
 		E6327A631BF6438E008D12E0 /* DebugSettingsBundleOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugSettingsBundleOptions.swift; sourceTree = "<group>"; };
 		E633E2D91C21EAF8001FFF6C /* PasswordDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordDetailViewController.swift; path = ../Settings/PasswordDetailViewController.swift; sourceTree = "<group>"; };
 		E63ED7D71BFCD9990097D08E /* LoginDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -2541,8 +2540,6 @@
 		E6CF28E61CB43B7900151AB3 /* SensitiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensitiveViewController.swift; sourceTree = "<group>"; };
 		E6DCC1ED1DCBB6AA00CEC4B7 /* Fennec.enterprise.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Fennec.enterprise.xcconfig; path = Configuration/Fennec.enterprise.xcconfig; sourceTree = "<group>"; };
 		E6F738741EB7A8D300B50143 /* FennecApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FennecApplication.entitlements; sourceTree = "<group>"; };
-		E6F738751EB7A97100B50143 /* FirefoxBetaApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirefoxBetaApplication.entitlements; sourceTree = "<group>"; };
-		E6F738761EB7A97500B50143 /* FirefoxApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirefoxApplication.entitlements; sourceTree = "<group>"; };
 		E6FCC43C1C40565200DF6113 /* FirefoxBeta.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = FirefoxBeta.xcconfig; path = Configuration/FirefoxBeta.xcconfig; sourceTree = "<group>"; };
 		E6FF6AC91D873CFF0070C294 /* PageMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageMetadata.swift; sourceTree = "<group>"; };
 		EB1C84B6212EFFBF001489DF /* BrowserViewController+ReaderMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrowserViewController+ReaderMode.swift"; sourceTree = "<group>"; };
@@ -3144,18 +3141,11 @@
 			path = LibraryViewController;
 			sourceTree = "<group>";
 		};
-		28CE83EF1A1D246900576538 /* Third-Party Source */ = {
-			isa = PBXGroup;
-			children = (
-				D8FDEB54220CFE970069A582 /* UIImage+ImageEffects.h */,
-				D8FDEB55220CFE970069A582 /* UIImage+ImageEffects.m */,
-			);
-			name = "Third-Party Source";
-			sourceTree = "<group>";
-		};
 		28EADE5C1AFC3A6D007FB2FB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0A06DA072E83CE86001CC241 /* UIImage+ImageEffects.h */,
+				0A06DA082E83CE86001CC241 /* UIImage+ImageEffects.m */,
 				8A8053B22E6A1BB300FEDDA4 /* Locale+Extension.swift */,
 				9609F4C926B57CE800F81493 /* Calendar+Extension.swift */,
 				E1442FBE294782B6003680B0 /* CGRect+Extension.swift */,
@@ -5556,10 +5546,7 @@
 		E689C6FF1E0C716F008BAADB /* Entitlements */ = {
 			isa = PBXGroup;
 			children = (
-				E6F738761EB7A97500B50143 /* FirefoxApplication.entitlements */,
-				E6F738751EB7A97100B50143 /* FirefoxBetaApplication.entitlements */,
 				E6F738741EB7A8D300B50143 /* FennecApplication.entitlements */,
-				E62AC15F1E956AFC00843532 /* FennecEnterpriseApplication.entitlements */,
 			);
 			path = Entitlements;
 			sourceTree = "<group>";
@@ -5728,7 +5715,6 @@
 				D34DC84C1A16C40C00D49B7B /* Providers */,
 				E4E0BB141AFBC9E4008D6260 /* Shared */,
 				2FCAE21B1ABB51F800877008 /* Storage */,
-				28CE83EF1A1D246900576538 /* Third-Party Source */,
 				43BE578B278BA4D900491291 /* RustMozillaAppServices-Info.plist */,
 				8ACD3B972BA8EA8300E73E9A /* PrivacyInfo.xcprivacy */,
 			);
@@ -7429,7 +7415,6 @@
 				F85C7EDD27109241004BDBA4 /* PasswordManagerOnboardingViewController.swift in Sources */,
 				8A8053B32E6A1BBF00FEDDA4 /* Locale+Extension.swift in Sources */,
 				612194E32CE507CF001664BB /* WallpaperBackgroundView.swift in Sources */,
-				D8FDEB57220CFE970069A582 /* UIImage+ImageEffects.m in Sources */,
 				0BDDB3462CA6E43A00D501DF /* BookmarksSaver.swift in Sources */,
 				EBB89506219398E500EB91A0 /* TabContentBlocker.swift in Sources */,
 				E1B9A2C22CAD91EF00F6A0E9 /* ToolbarTelemetry.swift in Sources */,
@@ -7447,6 +7432,7 @@
 				59A68D66379CFA85C4EAF00B /* TwoLineImageOverlayCell.swift in Sources */,
 				5A96FB5A2D94357800917B12 /* ScreenshotSetting.swift in Sources */,
 				0A49784A2C53E63200B1E82A /* TrackingProtectionViewController.swift in Sources */,
+				0A06DA092E83CE86001CC241 /* UIImage+ImageEffects.m in Sources */,
 				8A48807C2E68922400AD43D5 /* GleanOhttpUploader.swift in Sources */,
 				0AFE9BF12CF47DFC003DB4D1 /* PrivacyPreferencesViewController.swift in Sources */,
 				8A9E041B2D4D08350022ED90 /* BookmarkConfiguration.swift in Sources */,
