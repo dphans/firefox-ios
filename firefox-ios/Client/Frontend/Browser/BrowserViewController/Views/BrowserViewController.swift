@@ -9,7 +9,6 @@ import WebKit
 import Shared
 
 import SnapKit
-import Account
 import MobileCoreServices
 import Common
 import Redux

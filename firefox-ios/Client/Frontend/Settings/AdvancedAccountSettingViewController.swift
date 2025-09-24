@@ -5,8 +5,6 @@
 import UIKit
 import Shared
 
-import Account
-
 private class CustomFxAContentServerEnableSetting: BoolSetting {
       init(prefs: Prefs, settingDidChange: ((Bool?) -> Void)? = nil) {
           super.init(

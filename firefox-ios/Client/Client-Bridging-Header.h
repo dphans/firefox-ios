@@ -9,7 +9,6 @@
 
 #import "ThirdParty/Apple/UIImage+ImageEffects.h"
 
-#import "Account-Bridging-Header.h"
 #import "Shared-Bridging-Header.h"
 #import "Client-Bridging-Header.h"
 

@@ -4,7 +4,6 @@
 
 import Common
 import Redux
-import Account
 import Shared
 
 final class MainMenuMiddleware: FeatureFlaggable {

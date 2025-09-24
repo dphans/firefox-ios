@@ -5,7 +5,6 @@
 import Common
 import Foundation
 import Shared
-import Account
 import Glean
 import MozillaAppServices
 

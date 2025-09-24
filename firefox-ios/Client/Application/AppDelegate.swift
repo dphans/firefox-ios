@@ -177,10 +177,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FeatureFlaggable {
 
         profile.reopen()
 
-        if profile.prefs.boolForKey(PendingAccountDisconnectedKey) ?? false {
-            profile.removeAccount()
-        }
-
         profile.syncManager?.applicationDidBecomeActive()
         webServerUtil?.setUpWebServer()
 

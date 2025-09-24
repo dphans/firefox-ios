@@ -6,7 +6,6 @@ import Common
 import Redux
 import Shared
 
-import Account
 import SiteImageView
 import SummarizeKit
 
